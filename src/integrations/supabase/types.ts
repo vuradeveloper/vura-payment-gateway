@@ -14,7 +14,147 @@ export type Database = {
   }
   public: {
     Tables: {
-      [_ in never]: never
+      payment_methods: {
+        Row: {
+          created_at: string
+          expiry: string | null
+          id: string
+          is_default: boolean
+          label: string
+          last4: string | null
+          type: string
+          user_id: string
+        }
+        Insert: {
+          created_at?: string
+          expiry?: string | null
+          id?: string
+          is_default?: boolean
+          label: string
+          last4?: string | null
+          type: string
+          user_id: string
+        }
+        Update: {
+          created_at?: string
+          expiry?: string | null
+          id?: string
+          is_default?: boolean
+          label?: string
+          last4?: string | null
+          type?: string
+          user_id?: string
+        }
+        Relationships: []
+      }
+      profiles: {
+        Row: {
+          avatar_url: string | null
+          created_at: string
+          full_name: string | null
+          id: string
+          phone: string | null
+          rating: number
+          tier: string
+          trips_count: number
+          updated_at: string
+          wallet_balance: number
+        }
+        Insert: {
+          avatar_url?: string | null
+          created_at?: string
+          full_name?: string | null
+          id: string
+          phone?: string | null
+          rating?: number
+          tier?: string
+          trips_count?: number
+          updated_at?: string
+          wallet_balance?: number
+        }
+        Update: {
+          avatar_url?: string | null
+          created_at?: string
+          full_name?: string | null
+          id?: string
+          phone?: string | null
+          rating?: number
+          tier?: string
+          trips_count?: number
+          updated_at?: string
+          wallet_balance?: number
+        }
+        Relationships: []
+      }
+      promotions: {
+        Row: {
+          active: boolean
+          code: string
+          created_at: string
+          description: string | null
+          discount_pct: number
+          expires_at: string | null
+          id: string
+          title: string
+        }
+        Insert: {
+          active?: boolean
+          code: string
+          created_at?: string
+          description?: string | null
+          discount_pct?: number
+          expires_at?: string | null
+          id?: string
+          title: string
+        }
+        Update: {
+          active?: boolean
+          code?: string
+          created_at?: string
+          description?: string | null
+          discount_pct?: number
+          expires_at?: string | null
+          id?: string
+          title?: string
+        }
+        Relationships: []
+      }
+      trips: {
+        Row: {
+          completed_at: string | null
+          driver_name: string | null
+          dropoff: string
+          fare: number
+          id: string
+          pickup: string
+          requested_at: string
+          status: string
+          user_id: string
+        }
+        Insert: {
+          completed_at?: string | null
+          driver_name?: string | null
+          dropoff: string
+          fare?: number
+          id?: string
+          pickup: string
+          requested_at?: string
+          status?: string
+          user_id: string
+        }
+        Update: {
+          completed_at?: string | null
+          driver_name?: string | null
+          dropoff?: string
+          fare?: number
+          id?: string
+          pickup?: string
+          requested_at?: string
+          status?: string
+          user_id?: string
+        }
+        Relationships: []
+      }
     }
     Views: {
       [_ in never]: never
