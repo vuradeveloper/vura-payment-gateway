@@ -69,9 +69,9 @@ function WalletPage() {
             </DialogTrigger>
             <DialogContent>
               <DialogHeader>
-                <DialogTitle>Add funds via Ozow</DialogTitle>
+                <DialogTitle>Add funds via Instant EFT</DialogTitle>
                 <DialogDescription>
-                  Instant EFT powered by Ozow. (Demo mode — top-up is simulated. Live Ozow integration will be wired once you provide your Site Code, API Key, and Private Key.)
+                  Instant EFT top-up. (Demo mode — top-up is simulated. Live integration will be wired once you provide your Site Code, API Key, and Private Key.)
                 </DialogDescription>
               </DialogHeader>
               <div className="space-y-2 py-2">
@@ -89,7 +89,7 @@ function WalletPage() {
                 </div>
               </div>
               <DialogFooter>
-                <p className="text-[10px] text-muted-foreground flex-1 self-center">Powered by Ozow</p>
+                <p className="text-[10px] text-muted-foreground flex-1 self-center">Instant EFT</p>
                 <Button onClick={handleAddFunds}>Confirm top-up</Button>
               </DialogFooter>
             </DialogContent>
@@ -138,7 +138,7 @@ function WalletPage() {
         <Plus className="h-4 w-4 mr-1" /> Add payment method
       </Button>
 
-      <p className="text-[10px] text-muted-foreground text-center mt-6">Powered by Ozow · Instant EFT for South Africa</p>
+      <p className="text-[10px] text-muted-foreground text-center mt-6">Instant EFT for South Africa</p>
     </div>
   );
 }

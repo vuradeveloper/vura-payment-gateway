@@ -12,7 +12,7 @@ const faqs = [
   { q: "How do I cancel a ride?", a: "Open the trip in the Trips page and tap Cancel. Cancellation fees may apply after a driver is on the way." },
   { q: "How do refunds work?", a: "Refunds are returned to your original payment method within 3–7 business days." },
   { q: "How is the fare calculated?", a: "Fares combine a base rate plus distance and time, with surge applied during peak demand." },
-  { q: "Is my payment data secure?", a: "We never store your bank credentials. Top-ups go through Ozow Instant EFT, secured with PCI DSS Level 1." },
+  { q: "Is my payment data secure?", a: "We never store your bank credentials. Top-ups go through Instant EFT, secured with PCI DSS Level 1." },
 ];
 
 function Help() {
