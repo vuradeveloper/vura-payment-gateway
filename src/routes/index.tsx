@@ -280,9 +280,10 @@ function LandingPage() {
             <span className="font-semibold text-foreground">Vura</span>
           </div>
           <div className="flex flex-wrap gap-6">
-            <a href="#" className="hover:text-foreground transition">Privacy</a>
-            <a href="#" className="hover:text-foreground transition">Terms</a>
-            <a href="#" className="hover:text-foreground transition">Contact</a>
+            <Link to="/privacy" className="hover:text-foreground transition">Privacy Policy</Link>
+            <Link to="/terms" className="hover:text-foreground transition">Terms & Conditions</Link>
+            <Link to="/refund" className="hover:text-foreground transition">Refund Policy</Link>
+            <Link to="/contact" className="hover:text-foreground transition">Support & Contact</Link>
           </div>
           <p>Instant EFT · South Africa</p>
         </div>
