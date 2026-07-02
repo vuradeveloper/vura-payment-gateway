@@ -1,5 +1,5 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
-import { ArrowLeft, ReceiptRefund } from "lucide-react";
+import { ArrowLeft, Receipt } from "lucide-react";
 
 export const Route = createFileRoute("/refund")({
   component: RefundPage,
@@ -30,7 +30,7 @@ function RefundPage() {
           </div>
           <div className="hidden md:flex flex-1 justify-end">
             <div className="w-full max-w-md aspect-video bg-primary/10 rounded-2xl border border-primary/20 flex items-center justify-center">
-              <ReceiptRefund className="w-20 h-20 text-primary opacity-80" />
+              <Receipt className="w-20 h-20 text-primary opacity-80" />
             </div>
           </div>
         </div>
