@@ -27,12 +27,17 @@ function ChangePassword() {
     setLoading(false);
     if (error) return toast.error(error.message);
     toast.success("Password updated");
-    setPw(""); setConfirm("");
+    setPw("");
+    setConfirm("");
   }
 
   return (
     <div className="max-w-md mx-auto px-4 md:px-8 py-8 md:py-10">
-      <PageHeader eyebrow="Account" title="Change password" description="Update the password used to sign in." />
+      <PageHeader
+        eyebrow="Account"
+        title="Change password"
+        description="Update the password used to sign in."
+      />
       <Card className="rounded-2xl border p-6 shadow-card">
         <form onSubmit={save} className="space-y-4">
           <div className="space-y-1.5">
@@ -41,7 +46,12 @@ function ChangePassword() {
           </div>
           <div className="space-y-1.5">
             <Label htmlFor="cp">Confirm new password</Label>
-            <Input id="cp" type="password" value={confirm} onChange={(e) => setConfirm(e.target.value)} />
+            <Input
+              id="cp"
+              type="password"
+              value={confirm}
+              onChange={(e) => setConfirm(e.target.value)}
+            />
           </div>
           <Button type="submit" disabled={loading} className="w-full">
             {loading ? "Saving…" : "Update password"}

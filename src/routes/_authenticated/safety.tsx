@@ -11,12 +11,28 @@ export const Route = createFileRoute("/_authenticated/safety")({
 function Safety() {
   return (
     <div className="max-w-4xl mx-auto px-4 md:px-8 py-8 md:py-10">
-      <PageHeader eyebrow="Account" title="Safety center" description="Tools to keep every ride safe." />
+      <PageHeader
+        eyebrow="Account"
+        title="Safety center"
+        description="Tools to keep every ride safe."
+      />
       <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
         {[
-          { icon: Users, title: "Trusted contacts", text: "Share live trip status with people you trust." },
-          { icon: Shield, title: "RideCheck", text: "We monitor every trip for unexpected stops or route changes." },
-          { icon: PhoneCall, title: "24/7 emergency", text: "One-tap call to local emergency services." },
+          {
+            icon: Users,
+            title: "Trusted contacts",
+            text: "Share live trip status with people you trust.",
+          },
+          {
+            icon: Shield,
+            title: "RideCheck",
+            text: "We monitor every trip for unexpected stops or route changes.",
+          },
+          {
+            icon: PhoneCall,
+            title: "24/7 emergency",
+            text: "One-tap call to local emergency services.",
+          },
         ].map((i) => (
           <Card key={i.title} className="rounded-2xl border p-6 shadow-card">
             <div className="w-10 h-10 rounded-lg bg-primary-soft text-primary flex items-center justify-center mb-4">

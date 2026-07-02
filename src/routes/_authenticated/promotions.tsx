@@ -22,7 +22,11 @@ function Promotions() {
 
   return (
     <div className="max-w-4xl mx-auto px-4 md:px-8 py-8 md:py-10">
-      <PageHeader eyebrow="Money" title="Promotions" description="Active offers and ride discounts." />
+      <PageHeader
+        eyebrow="Money"
+        title="Promotions"
+        description="Active offers and ride discounts."
+      />
       <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
         {(promos ?? []).map((p) => (
           <Card key={p.id} className="rounded-2xl border p-6 shadow-card">

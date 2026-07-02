@@ -52,16 +52,51 @@ function Dashboard() {
       />
 
       <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-6">
-        <StatCard icon={FileText} label="Trips" value={profile?.trips_count ?? 0} tint="bg-primary-soft text-primary" />
-        <StatCard icon={Calendar} label="Upcoming ride" value="None" tint="bg-blue-50 text-blue-600" />
-        <StatCard icon={Wallet} label="Vura cash" value={`R ${Number(profile?.wallet_balance ?? 0).toFixed(2)}`} tint="bg-emerald-50 text-emerald-600" />
+        <StatCard
+          icon={FileText}
+          label="Trips"
+          value={profile?.trips_count ?? 0}
+          tint="bg-primary-soft text-primary"
+        />
+        <StatCard
+          icon={Calendar}
+          label="Upcoming ride"
+          value="None"
+          tint="bg-blue-50 text-blue-600"
+        />
+        <StatCard
+          icon={Wallet}
+          label="Vura cash"
+          value={`R ${Number(profile?.wallet_balance ?? 0).toFixed(2)}`}
+          tint="bg-emerald-50 text-emerald-600"
+        />
       </div>
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-        <ActionCard to="/book" icon={MapPin} title="Book a ride" subtitle="Pick your pickup and destination" />
-        <ActionCard to="/wallet" icon={Wallet} title="Top up wallet" subtitle="Add Vura cash to ride faster" />
-        <ActionCard to="/trips" icon={FileText} title="Trip history" subtitle="Review past rides and receipts" />
-        <ActionCard to="/safety" icon={QrCode} title="Safety center" subtitle="Trusted contacts and RideCheck" />
+        <ActionCard
+          to="/book"
+          icon={MapPin}
+          title="Book a ride"
+          subtitle="Pick your pickup and destination"
+        />
+        <ActionCard
+          to="/wallet"
+          icon={Wallet}
+          title="Top up wallet"
+          subtitle="Add Vura cash to ride faster"
+        />
+        <ActionCard
+          to="/trips"
+          icon={FileText}
+          title="Trip history"
+          subtitle="Review past rides and receipts"
+        />
+        <ActionCard
+          to="/safety"
+          icon={QrCode}
+          title="Safety center"
+          subtitle="Trusted contacts and RideCheck"
+        />
       </div>
 
       <div className="mt-8 rounded-2xl border bg-card p-5 flex items-center justify-between gap-4 shadow-card">
@@ -69,7 +104,9 @@ function Dashboard() {
           <CheckCircle2 className="h-5 w-5 text-success mt-0.5" />
           <div>
             <p className="font-semibold">Account verified</p>
-            <p className="text-sm text-muted-foreground">You're ready to book rides anywhere Vura operates.</p>
+            <p className="text-sm text-muted-foreground">
+              You're ready to book rides anywhere Vura operates.
+            </p>
           </div>
         </div>
         <Button asChild>

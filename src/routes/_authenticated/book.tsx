@@ -16,7 +16,13 @@ export const Route = createFileRoute("/_authenticated/book")({
 
 const RIDE_TYPES = [
   { id: "go", name: "Vura Go", eta: "3 min", price: 42, desc: "Affordable rides for everyday" },
-  { id: "comfort", name: "Vura Comfort", eta: "5 min", price: 68, desc: "Newer cars, extra legroom" },
+  {
+    id: "comfort",
+    name: "Vura Comfort",
+    eta: "5 min",
+    price: 68,
+    desc: "Newer cars, extra legroom",
+  },
   { id: "xl", name: "Vura XL", eta: "7 min", price: 95, desc: "Room for up to 6 riders" },
 ];
 
@@ -54,22 +60,44 @@ function BookRide() {
 
   return (
     <div className="max-w-4xl mx-auto px-4 md:px-8 py-8 md:py-10">
-      <PageHeader eyebrow="Rides" title="Book a ride" description="Enter where you are and where you're going." />
+      <PageHeader
+        eyebrow="Rides"
+        title="Book a ride"
+        description="Enter where you are and where you're going."
+      />
 
       <form onSubmit={handleBook} className="space-y-6">
         <Card className="p-6 rounded-2xl border shadow-card space-y-4">
           <div className="space-y-2">
-            <Label htmlFor="pickup" className="flex items-center gap-2"><MapPin className="h-3.5 w-3.5 text-primary"/> Pickup</Label>
-            <Input id="pickup" required value={pickup} onChange={(e) => setPickup(e.target.value)} placeholder="Current location" />
+            <Label htmlFor="pickup" className="flex items-center gap-2">
+              <MapPin className="h-3.5 w-3.5 text-primary" /> Pickup
+            </Label>
+            <Input
+              id="pickup"
+              required
+              value={pickup}
+              onChange={(e) => setPickup(e.target.value)}
+              placeholder="Current location"
+            />
           </div>
           <div className="space-y-2">
-            <Label htmlFor="dropoff" className="flex items-center gap-2"><Navigation className="h-3.5 w-3.5 text-primary"/> Destination</Label>
-            <Input id="dropoff" required value={dropoff} onChange={(e) => setDropoff(e.target.value)} placeholder="Where to?" />
+            <Label htmlFor="dropoff" className="flex items-center gap-2">
+              <Navigation className="h-3.5 w-3.5 text-primary" /> Destination
+            </Label>
+            <Input
+              id="dropoff"
+              required
+              value={dropoff}
+              onChange={(e) => setDropoff(e.target.value)}
+              placeholder="Where to?"
+            />
           </div>
         </Card>
 
         <div className="space-y-3">
-          <p className="text-sm font-semibold uppercase tracking-wider text-muted-foreground">Choose your ride</p>
+          <p className="text-sm font-semibold uppercase tracking-wider text-muted-foreground">
+            Choose your ride
+          </p>
           {RIDE_TYPES.map((r) => (
             <button
               type="button"
@@ -79,7 +107,9 @@ function BookRide() {
             >
               <div>
                 <p className="font-semibold">{r.name}</p>
-                <p className="text-sm text-muted-foreground">{r.desc} · {r.eta} away</p>
+                <p className="text-sm text-muted-foreground">
+                  {r.desc} · {r.eta} away
+                </p>
               </div>
               <p className="text-lg font-semibold">R {r.price}</p>
             </button>

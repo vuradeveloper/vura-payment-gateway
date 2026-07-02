@@ -29,7 +29,11 @@ function Trips() {
         eyebrow="History"
         title="Your trips"
         description="Past, ongoing, and upcoming rides."
-        action={<Button asChild><Link to="/book">Book a ride</Link></Button>}
+        action={
+          <Button asChild>
+            <Link to="/book">Book a ride</Link>
+          </Button>
+        }
       />
 
       {isLoading ? (
@@ -43,7 +47,10 @@ function Trips() {
       ) : (
         <div className="space-y-3">
           {trips.map((t) => (
-            <div key={t.id} className="rounded-2xl border bg-card p-5 shadow-card flex items-center justify-between gap-4">
+            <div
+              key={t.id}
+              className="rounded-2xl border bg-card p-5 shadow-card flex items-center justify-between gap-4"
+            >
               <div className="flex-1 min-w-0">
                 <div className="flex items-center gap-2 text-sm">
                   <MapPin className="h-3.5 w-3.5 text-primary" />
@@ -59,11 +66,17 @@ function Trips() {
               </div>
               <div className="text-right">
                 <p className="font-semibold">R {Number(t.fare).toFixed(2)}</p>
-                <span className={`inline-block mt-1 text-[10px] uppercase font-bold tracking-wider px-2 py-0.5 rounded-full ${
-                  t.status === "completed" ? "bg-emerald-50 text-emerald-700" :
-                  t.status === "cancelled" ? "bg-muted text-muted-foreground" :
-                  "bg-primary-soft text-primary"
-                }`}>{t.status}</span>
+                <span
+                  className={`inline-block mt-1 text-[10px] uppercase font-bold tracking-wider px-2 py-0.5 rounded-full ${
+                    t.status === "completed"
+                      ? "bg-emerald-50 text-emerald-700"
+                      : t.status === "cancelled"
+                        ? "bg-muted text-muted-foreground"
+                        : "bg-primary-soft text-primary"
+                  }`}
+                >
+                  {t.status}
+                </span>
               </div>
             </div>
           ))}
