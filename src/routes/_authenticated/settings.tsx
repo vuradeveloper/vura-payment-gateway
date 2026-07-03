@@ -30,7 +30,10 @@ function Settings() {
   async function save() {
     const { data: u } = await supabase.auth.getUser();
     if (!u.user) return;
-    const { error } = await supabase.from("profiles").update({ full_name: name, phone }).eq("id", u.user.id);
+    const { error } = await supabase
+      .from("profiles")
+      .update({ full_name: name, phone })
+      .eq("id", u.user.id);
     if (error) return toast.error(error.message);
     toast.success("Profile saved");
     refetch();
@@ -38,7 +41,11 @@ function Settings() {
 
   return (
     <div className="max-w-3xl mx-auto px-4 md:px-8 py-8 md:py-10">
-      <PageHeader eyebrow="Account" title="Settings" description="Profile, notifications, and privacy." />
+      <PageHeader
+        eyebrow="Account"
+        title="Settings"
+        description="Profile, notifications, and privacy."
+      />
       <Card className="rounded-2xl border p-6 shadow-card space-y-4 mb-6">
         <p className="font-semibold">Profile</p>
         <div className="space-y-1.5">
@@ -51,7 +58,12 @@ function Settings() {
         </div>
         <div className="space-y-1.5">
           <Label htmlFor="p">Phone</Label>
-          <Input id="p" value={phone} onChange={(e) => setPhone(e.target.value)} placeholder="+27 …" />
+          <Input
+            id="p"
+            value={phone}
+            onChange={(e) => setPhone(e.target.value)}
+            placeholder="+27 …"
+          />
         </div>
         <Button onClick={save}>Save changes</Button>
       </Card>

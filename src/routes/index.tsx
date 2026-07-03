@@ -19,7 +19,11 @@ export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
       { title: "Vura — Ride Hailing, South Africa" },
-      { name: "description", content: "Book rides across South Africa with Vura. Safe, affordable, and fair — with a R5 commission cap for drivers." },
+      {
+        name: "description",
+        content:
+          "Book rides across South Africa with Vura. Safe, affordable, and fair — with a R5 commission cap for drivers.",
+      },
     ],
   }),
   component: LandingPage,
@@ -28,7 +32,6 @@ export const Route = createFileRoute("/")({
 function LandingPage() {
   return (
     <div className="min-h-screen bg-background">
-
       {/* ── Nav ──────────────────────────────────────────────── */}
       <nav className="sticky top-0 z-50 border-b bg-background/80 backdrop-blur">
         <div className="max-w-6xl mx-auto px-4 md:px-8 h-16 flex items-center justify-between">
@@ -57,16 +60,16 @@ function LandingPage() {
               </span>
             </h1>
             <p className="mt-6 text-lg md:text-xl text-muted-foreground max-w-xl leading-relaxed">
-              Vura is the e-hailing app South Africa has been waiting for —
-              safe, affordable rides for passengers, and fair earnings for
-              drivers. Built differently, on purpose.
+              Vura is the e-hailing app South Africa has been waiting for — safe, affordable rides
+              for passengers, and fair earnings for drivers. Built differently, on purpose.
             </p>
             <div className="flex flex-wrap gap-3 mt-8">
               <Button size="lg" className="h-12 px-8 text-base" asChild>
-                <a href="#how">See how it works <ArrowRight className="ml-2 h-4 w-4" /></a>
+                <a href="#how">
+                  See how it works <ArrowRight className="ml-2 h-4 w-4" />
+                </a>
               </Button>
             </div>
-
           </div>
         </div>
         <div
@@ -82,16 +85,15 @@ function LandingPage() {
             Our philosophy
           </p>
           <blockquote className="text-xl md:text-3xl font-bold leading-snug tracking-tight max-w-3xl italic text-white/90">
-            "Here's to the crazy ones. The misfits. The rebels. The troublemakers.
-            The round pegs in the square holes. The ones who{" "}
+            "Here's to the crazy ones. The misfits. The rebels. The troublemakers. The round pegs in
+            the square holes. The ones who{" "}
             <em className="not-italic text-amber-400">see things differently.</em>"
           </blockquote>
           <p className="mt-4 text-sm text-white/40 font-medium">— Think Different, 1997</p>
           <p className="mt-6 text-base md:text-lg text-white/60 max-w-2xl leading-relaxed">
-            We built Vura the way Apple once built computers — by asking what the
-            world actually needs, ignoring how it's always been done, and refusing
-            to ship something that doesn't change things. South Africa deserves a
-            ride-hailing app that's genuinely on its side.
+            We built Vura the way Apple once built computers — by asking what the world actually
+            needs, ignoring how it's always been done, and refusing to ship something that doesn't
+            change things. South Africa deserves a ride-hailing app that's genuinely on its side.
           </p>
         </div>
       </section>
@@ -99,7 +101,9 @@ function LandingPage() {
       {/* ── How it works ─────────────────────────────────────── */}
       <section id="how" className="py-20 md:py-24 border-t">
         <div className="max-w-6xl mx-auto px-4 md:px-8">
-          <p className="text-xs font-bold tracking-[0.15em] uppercase text-amber-600 mb-4">How it works</p>
+          <p className="text-xs font-bold tracking-[0.15em] uppercase text-amber-600 mb-4">
+            How it works
+          </p>
           <h2 className="text-3xl md:text-4xl font-bold tracking-tight">
             On the road in three steps
           </h2>
@@ -138,7 +142,9 @@ function LandingPage() {
         <div className="max-w-6xl mx-auto px-4 md:px-8">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
             <div>
-              <p className="text-xs font-bold tracking-[0.15em] uppercase text-amber-600 mb-4">For drivers</p>
+              <p className="text-xs font-bold tracking-[0.15em] uppercase text-amber-600 mb-4">
+                For drivers
+              </p>
               <h2 className="text-3xl md:text-4xl font-bold tracking-tight leading-tight">
                 Keep what{" "}
                 <span className="bg-clip-text text-transparent bg-gradient-to-r from-primary to-amber-500">
@@ -146,17 +152,41 @@ function LandingPage() {
                 </span>
               </h2>
               <p className="mt-5 text-muted-foreground leading-relaxed">
-                Every other platform takes a percentage cut that grows as you do —
-                punishing your success. Vura does it differently. We charge a flat
-                commission capped at R5 per trip, no matter how much you earn. The
-                more you make, the more you keep.
+                Every other platform takes a percentage cut that grows as you do — punishing your
+                success. Vura does it differently. We charge a flat commission capped at R5 per
+                trip, no matter how much you earn. The more you make, the more you keep.
               </p>
               <ul className="mt-7 space-y-4">
                 {[
-                  { text: <><strong>R5 maximum commission</strong> — never more, ever</> },
-                  { text: <><strong>Transparent pricing</strong> — see exactly what you earn before you accept</> },
-                  { text: <><strong>No surprise deductions</strong> — your fare is your fare</> },
-                  { text: <><strong>Flexible hours</strong> — drive when it suits you</> },
+                  {
+                    text: (
+                      <>
+                        <strong>R5 maximum commission</strong> — never more, ever
+                      </>
+                    ),
+                  },
+                  {
+                    text: (
+                      <>
+                        <strong>Transparent pricing</strong> — see exactly what you earn before you
+                        accept
+                      </>
+                    ),
+                  },
+                  {
+                    text: (
+                      <>
+                        <strong>No surprise deductions</strong> — your fare is your fare
+                      </>
+                    ),
+                  },
+                  {
+                    text: (
+                      <>
+                        <strong>Flexible hours</strong> — drive when it suits you
+                      </>
+                    ),
+                  },
                 ].map((item, i) => (
                   <li key={i} className="flex items-start gap-3 text-sm">
                     <CheckCircle2 className="h-4 w-4 text-emerald-500 mt-0.5 shrink-0" />
@@ -173,10 +203,16 @@ function LandingPage() {
                 Max commission per trip
               </p>
               <p className="text-8xl font-black tracking-tighter text-amber-400 leading-none">R5</p>
-              <p className="text-lg font-semibold text-white/50 mt-2 tracking-tight">flat — always</p>
+              <p className="text-lg font-semibold text-white/50 mt-2 tracking-tight">
+                flat — always
+              </p>
               <div className="mt-7 pt-7 border-t border-white/10 space-y-2 text-sm text-white/60 leading-relaxed">
-                <p>On a R200 trip, you keep <span className="text-white font-semibold">R195</span>.</p>
-                <p>On a R500 trip, you keep <span className="text-white font-semibold">R495</span>.</p>
+                <p>
+                  On a R200 trip, you keep <span className="text-white font-semibold">R195</span>.
+                </p>
+                <p>
+                  On a R500 trip, you keep <span className="text-white font-semibold">R495</span>.
+                </p>
                 <p className="mt-3 text-white/40">
                   We grow when you grow — not by taking more from you.
                 </p>
@@ -189,7 +225,9 @@ function LandingPage() {
       {/* ── Rider Features ────────────────────────────────────── */}
       <section className="py-20 md:py-24 border-t">
         <div className="max-w-6xl mx-auto px-4 md:px-8">
-          <p className="text-xs font-bold tracking-[0.15em] uppercase text-amber-600 mb-4">For riders</p>
+          <p className="text-xs font-bold tracking-[0.15em] uppercase text-amber-600 mb-4">
+            For riders
+          </p>
           <h2 className="text-3xl md:text-4xl font-bold tracking-tight max-w-lg">
             Safe, affordable rides{" "}
             <span className="bg-clip-text text-transparent bg-gradient-to-r from-primary to-amber-500">
@@ -246,7 +284,9 @@ function LandingPage() {
                 key={f.title}
                 className="rounded-2xl border bg-card p-6 shadow-card hover:border-amber-200 transition-colors"
               >
-                <div className={`w-10 h-10 rounded-lg ${f.bg} flex items-center justify-center mb-4`}>
+                <div
+                  className={`w-10 h-10 rounded-lg ${f.bg} flex items-center justify-center mb-4`}
+                >
                   <f.icon className={`h-5 w-5 ${f.color}`} />
                 </div>
                 <h3 className="font-semibold mb-1.5">{f.title}</h3>
@@ -289,7 +329,6 @@ function LandingPage() {
           <p>Instant EFT · South Africa</p>
         </div>
       </footer>
-
     </div>
   );
 }

@@ -40,7 +40,8 @@ function AuthPage() {
     try {
       if (mode === "signup") {
         const { error } = await supabase.auth.signUp({
-          email, password,
+          email,
+          password,
           options: {
             emailRedirectTo: window.location.origin,
             data: { full_name: fullName },
@@ -60,7 +61,9 @@ function AuthPage() {
   }
 
   async function handleGoogle() {
-    const result = await lovable.auth.signInWithOAuth("google", { redirect_uri: window.location.origin });
+    const result = await lovable.auth.signInWithOAuth("google", {
+      redirect_uri: window.location.origin,
+    });
     if (result.error) toast.error(result.error.message ?? "Google sign-in failed");
   }
 
@@ -79,28 +82,52 @@ function AuthPage() {
               type="button"
               onClick={() => setMode("signin")}
               className={`flex-1 py-2 text-sm font-medium rounded-md transition ${mode === "signin" ? "bg-card shadow-sm" : "text-muted-foreground"}`}
-            >Sign in</button>
+            >
+              Sign in
+            </button>
             <button
               type="button"
               onClick={() => setMode("signup")}
               className={`flex-1 py-2 text-sm font-medium rounded-md transition ${mode === "signup" ? "bg-card shadow-sm" : "text-muted-foreground"}`}
-            >Sign up</button>
+            >
+              Sign up
+            </button>
           </div>
 
           <form onSubmit={handleSubmit} className="space-y-4">
             {mode === "signup" && (
               <div className="space-y-1.5">
                 <Label htmlFor="name">Full name</Label>
-                <Input id="name" value={fullName} onChange={(e) => setFullName(e.target.value)} required placeholder="Jane Rider" />
+                <Input
+                  id="name"
+                  value={fullName}
+                  onChange={(e) => setFullName(e.target.value)}
+                  required
+                  placeholder="Jane Rider"
+                />
               </div>
             )}
             <div className="space-y-1.5">
               <Label htmlFor="email">Email</Label>
-              <Input id="email" type="email" value={email} onChange={(e) => setEmail(e.target.value)} required placeholder="you@vura.app" />
+              <Input
+                id="email"
+                type="email"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+                required
+                placeholder="you@vura.app"
+              />
             </div>
             <div className="space-y-1.5">
               <Label htmlFor="password">Password</Label>
-              <Input id="password" type="password" value={password} onChange={(e) => setPassword(e.target.value)} required minLength={6} />
+              <Input
+                id="password"
+                type="password"
+                value={password}
+                onChange={(e) => setPassword(e.target.value)}
+                required
+                minLength={6}
+              />
             </div>
             <Button type="submit" className="w-full" disabled={loading}>
               {loading ? "Please wait…" : mode === "signup" ? "Create account" : "Sign in"}

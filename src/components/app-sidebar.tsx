@@ -64,7 +64,11 @@ export function AppSidebar() {
             const active = path === item.url;
             return (
               <SidebarMenuItem key={item.url}>
-                <SidebarMenuButton asChild isActive={active} className="rounded-lg data-[active=true]:bg-primary-soft data-[active=true]:text-primary">
+                <SidebarMenuButton
+                  asChild
+                  isActive={active}
+                  className="rounded-lg data-[active=true]:bg-primary-soft data-[active=true]:text-primary"
+                >
                   <Link to={item.url} className="flex items-center gap-2.5">
                     <item.icon className="h-4 w-4" />
                     <span>{item.title}</span>
@@ -85,7 +89,9 @@ export function AppSidebar() {
           <VuraLogo size={32} />
           <div className="flex flex-col leading-tight">
             <span className="text-base font-bold text-primary tracking-tight">VURA</span>
-            <span className="text-[10px] uppercase tracking-wider text-muted-foreground">Ride · Wallet · Trips</span>
+            <span className="text-[10px] uppercase tracking-wider text-muted-foreground">
+              Ride · Wallet · Trips
+            </span>
           </div>
         </div>
       </SidebarHeader>
