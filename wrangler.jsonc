@@ -1,6 +1,6 @@
 {
   "$schema": "node_modules/wrangler/config-schema.json",
-  "name": "vuradeveloper-vura-payment-gateway",
+  "name": "vura-payment-gateway1",
   "compatibility_date": "2026-07-02",
   "compatibility_flags": ["nodejs_compat"],
   "main": ".output/server/index.mjs",
