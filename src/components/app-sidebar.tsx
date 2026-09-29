@@ -87,12 +87,6 @@ export function AppSidebar() {
       <SidebarHeader className="border-b">
         <div className="flex items-center gap-2.5 px-2 py-2">
           <VuraLogo size={32} />
-          <div className="flex flex-col leading-tight">
-            <span className="text-base font-bold text-primary tracking-tight">VURA</span>
-            <span className="text-[10px] uppercase tracking-wider text-muted-foreground">
-              Ride · Wallet · Trips
-            </span>
-          </div>
         </div>
       </SidebarHeader>
       <SidebarContent>
