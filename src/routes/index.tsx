@@ -38,6 +38,9 @@ function LandingPage() {
           <Link to="/" className="flex items-center gap-2.5">
             <VuraLogo size={34} />
           </Link>
+          <span className="rounded-full border border-amber-200 bg-amber-50 px-4 py-1.5 text-xs font-bold uppercase tracking-[0.15em] text-amber-700">
+            Coming soon
+          </span>
         </div>
       </nav>
 
@@ -114,17 +117,17 @@ function LandingPage() {
               {
                 icon: CreditCard,
                 title: "Ride now, pay later",
-                text: "Take the trip you need today and settle at month-end. No upfront balance, no stress.",
+                text: "Take 3 rides with Vura and you qualify. Then ride now and settle on pay day. No upfront balance, no stress.",
               },
               {
                 icon: CalendarClock,
-                title: "Weekly billing",
-                text: "Rides build up and bill once a week — so your cash flow stays in your hands.",
+                title: "Monthly billing",
+                text: "Rides build up and bill once a month at month-end, when you get paid.",
               },
               {
                 icon: Percent,
-                title: "0% when you pay on time",
-                text: "Settle your balance on time and interest stays at exactly zero. Always. No catches.",
+                title: "0% interest, always",
+                text: "Pay your balance on pay day and interest stays at exactly zero. Always. No catches.",
               },
               {
                 icon: Zap,
@@ -280,12 +283,12 @@ function LandingPage() {
             </span>
           </h2>
           <p className="mt-5 text-muted-foreground max-w-md mx-auto">
-            Join the waitlist. Be first when Vura launches in your city.
+            Vura is launching soon. Join the waitlist to be first in your city.
           </p>
           <Button size="lg" className="h-12 px-8 text-base mt-8" asChild>
-            <a href="#pay-later">
-              Get started <ArrowRight className="ml-2 h-4 w-4" />
-            </a>
+            <Link to="/contact">
+              Join the waitlist <ArrowRight className="ml-2 h-4 w-4" />
+            </Link>
           </Button>
         </div>
       </section>
