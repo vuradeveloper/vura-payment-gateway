@@ -133,7 +133,68 @@ function TermsPage() {
         </p>
       </LegalSection>
 
-      <LegalSection index="13" title="Contact">
+      <LegalSection index="13" title="Pay Later (Monthly Ride Account)" id="pay-later">
+        <p>
+          <strong>13.1 What it is.</strong> Pay Later lets eligible riders take Vura rides and pay for
+          them on a monthly account instead of at the time of each ride. It is a billing option for
+          Vura ride fares only. It cannot be used for cash, transfers, wallet top-ups, or purchases
+          from third parties.
+        </p>
+        <p>
+          <strong>13.2 Eligibility.</strong> Pay Later unlocks after at least{" "}
+          <strong>5 completed paid rides</strong> on the same saved card, subject to our eligibility
+          checks. We may refuse or withdraw Pay Later at any time.
+        </p>
+        <p>
+          <strong>13.3 Account limit.</strong> Your outstanding Pay Later balance may not exceed the
+          limit shown in the app. The limit starts at R100 and may increase up to R1,000 based on
+          usage. It is a cap on the amount you owe, not a promise of credit.
+        </p>
+        <p>
+          <strong>13.4 No charge for using Pay Later.</strong> The fare is the same whether you pay by
+          Pay Later, card, or cash. We charge no interest, no fee, and no late fee.
+        </p>
+        <p>
+          <strong>13.5 Billing and due date.</strong> Pay Later fares are recorded in the app and
+          added to your balance. The amount is due by the last day of the month in which the ride was
+          taken. You may repay earlier through the app.
+        </p>
+        <p>
+          <strong>13.6 Payment.</strong> You repay from your saved card. You may pay manually at any
+          time. Auto-debit is optional and requires your separate consent. If auto-debit is on, we
+          may collect the amount due on or after the due date. If it is off, you must pay manually.
+        </p>
+        <p>
+          <strong>13.7 Ride-to-repay.</strong> While you owe a balance, every{" "}
+          <strong>4 completed rides</strong> automatically settles <strong>R25</strong> of that
+          balance. This is a partial repayment of money you already owe. It has no cash value, does
+          not increase your limit, and does not extend your due date.
+        </p>
+        <p>
+          <strong>13.8 If you do not pay.</strong> We do not charge a late fee or interest. If your
+          balance is not paid by the due date, we may suspend Pay Later access and your Vura account
+          until it is paid. After failed collection attempts, your account may be frozen and your
+          identity may be blocked from using Pay Later in future. Cash and card rides are unaffected.
+        </p>
+        <p>
+          <strong>13.9 Restrictions.</strong> Pay Later is only for Vura rides, is non-transferable,
+          and may not be used by another person.
+        </p>
+        <p>
+          <strong>13.10 Disputes.</strong> If you believe a ride on your balance is wrong, contact
+          support within 7 days. Disputed amounts will not be treated as late while we review them.
+        </p>
+        <p>
+          <strong>13.11 Changes and ending Pay Later.</strong> We may change or end Pay Later on 30
+          days&rsquo; notice. Amounts for rides already taken remain payable.
+        </p>
+        <p>
+          <strong>13.12 Acceptance.</strong> You must accept this section in the app before your first
+          Pay Later ride.
+        </p>
+      </LegalSection>
+
+      <LegalSection index="14" title="Contact">
         <p>
           For questions about these Terms and Conditions, please contact us at{" "}
           <Link to="/contact" className="text-primary underline">

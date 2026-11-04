@@ -117,7 +117,7 @@ function LandingPage() {
               {
                 icon: CreditCard,
                 title: "Ride now, pay later",
-                text: "Take 3 rides with Vura and you qualify. Then ride now and settle on pay day. No upfront balance, no stress.",
+                text: "Take 5 rides with Vura and you qualify. Then ride now and settle at month-end. No interest, no fee, no late fee.",
               },
               {
                 icon: CalendarClock,

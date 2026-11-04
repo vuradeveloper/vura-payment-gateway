@@ -66,14 +66,16 @@ export function LegalPage({
 export function LegalSection({
   index,
   title,
+  id,
   children,
 }: {
   index: string;
   title: string;
+  id?: string;
   children: ReactNode;
 }) {
   return (
-    <section className="py-7 first:pt-0 border-b last:border-b-0">
+    <section id={id} className="py-7 first:pt-0 border-b last:border-b-0">
       <h2 className="text-base font-bold tracking-tight mb-3">
         <span className="text-amber-600 font-black mr-1.5">{index}.</span>
         {title}
