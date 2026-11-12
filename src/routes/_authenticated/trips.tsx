@@ -69,7 +69,7 @@ function Trips() {
                 <span
                   className={`inline-block mt-1 text-[10px] uppercase font-bold tracking-wider px-2 py-0.5 rounded-full ${
                     t.status === "completed"
-                      ? "bg-emerald-50 text-emerald-700"
+                      ? "bg-[#FBE9E7] text-[#E1251B]"
                       : t.status === "cancelled"
                         ? "bg-muted text-muted-foreground"
                         : "bg-primary-soft text-primary"

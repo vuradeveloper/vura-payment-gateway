@@ -62,13 +62,13 @@ function Dashboard() {
           icon={Calendar}
           label="Upcoming ride"
           value="None"
-          tint="bg-blue-50 text-blue-600"
+          tint="bg-[#F8F6F2] text-[#0B0B0C]"
         />
         <StatCard
           icon={Wallet}
           label="Vura cash"
           value={`R ${Number(profile?.wallet_balance ?? 0).toFixed(2)}`}
-          tint="bg-emerald-50 text-emerald-600"
+          tint="bg-[#FBE9E7] text-[#E1251B]"
         />
       </div>
 

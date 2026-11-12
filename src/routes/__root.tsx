@@ -16,16 +16,21 @@ import { Toaster } from "@/components/ui/sonner";
 
 function NotFoundComponent() {
   return (
-    <div className="flex min-h-screen items-center justify-center bg-background px-4">
+    <div className="flex min-h-screen items-center justify-center bg-white px-4 text-[#0B0B0C]">
       <div className="max-w-md text-center">
-        <h1 className="text-7xl font-bold text-foreground">404</h1>
-        <h2 className="mt-4 text-xl font-semibold">Page not found</h2>
-        <p className="mt-2 text-sm text-muted-foreground">
+        <p className="text-[10px] font-bold uppercase tracking-[0.28em] text-[#E1251B]">
+          Vura / 404
+        </p>
+        <h1 className="font-display mt-3 text-8xl uppercase leading-none tracking-[-0.05em]">
+          404
+        </h1>
+        <h2 className="font-display mt-4 text-2xl uppercase tracking-[-0.02em]">Page not found</h2>
+        <p className="mt-2 text-sm text-[#6B6560]">
           The page you're looking for doesn't exist.
         </p>
         <Link
           to="/"
-          className="mt-6 inline-flex items-center justify-center rounded-md bg-primary px-4 py-2 text-sm font-medium text-primary-foreground transition hover:opacity-90"
+          className="mt-6 inline-flex h-11 items-center justify-center rounded-full bg-[#E1251B] px-6 text-[11px] font-black uppercase tracking-[0.14em] text-white transition hover:bg-[#0B0B0C]"
         >
           Go home
         </Link>
@@ -34,17 +39,23 @@ function NotFoundComponent() {
   );
 }
 
-function ErrorComponent({ error, reset }: { error: Error; reset: () => void }) {
-  console.error(error);
+function ErrorComponent({ error, reset }: { error: unknown; reset: () => void }) {
+  const err = error instanceof Error ? error : new Error(String(error));
+  console.error(err);
   const router = useRouter();
   useEffect(() => {
-    reportLovableError(error, { boundary: "tanstack_root_error_component" });
-  }, [error]);
+    reportLovableError(err, { boundary: "tanstack_root_error_component" });
+  }, [err]);
   return (
-    <div className="flex min-h-screen items-center justify-center bg-background px-4">
+    <div className="flex min-h-screen items-center justify-center bg-white px-4 text-[#0B0B0C]">
       <div className="max-w-md text-center">
-        <h1 className="text-xl font-semibold">This page didn't load</h1>
-        <p className="mt-2 text-sm text-muted-foreground">
+        <p className="text-[10px] font-bold uppercase tracking-[0.28em] text-[#E1251B]">
+          Vura / Error
+        </p>
+        <h1 className="font-display mt-3 text-3xl uppercase leading-[0.95] tracking-[-0.035em]">
+          This page didn't load
+        </h1>
+        <p className="mt-2 text-sm text-[#6B6560]">
           Something went wrong. Try again or head home.
         </p>
         <div className="mt-6 flex flex-wrap justify-center gap-2">
@@ -53,13 +64,13 @@ function ErrorComponent({ error, reset }: { error: Error; reset: () => void }) {
               router.invalidate();
               reset();
             }}
-            className="rounded-md bg-primary px-4 py-2 text-sm font-medium text-primary-foreground hover:opacity-90"
+            className="inline-flex h-11 items-center justify-center rounded-full bg-[#E1251B] px-6 text-[11px] font-black uppercase tracking-[0.14em] text-white transition hover:bg-[#0B0B0C]"
           >
             Try again
           </button>
           <a
             href="/"
-            className="rounded-md border border-input bg-background px-4 py-2 text-sm font-medium hover:bg-accent"
+            className="inline-flex h-11 items-center justify-center rounded-full border border-[#E6E1DA] bg-white px-6 text-[11px] font-black uppercase tracking-[0.14em] text-[#0B0B0C] transition hover:border-[#E1251B] hover:text-[#E1251B]"
           >
             Go home
           </a>
@@ -80,7 +91,22 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
         content: "Book rides, manage your wallet, and track your trips with Vura.",
       },
     ],
-    links: [{ rel: "stylesheet", href: appCss }],
+    links: [
+      { rel: "icon", href: "/favicon.ico", sizes: "any" },
+      { rel: "icon", type: "image/png", sizes: "32x32", href: "/favicon-32.png" },
+      { rel: "icon", type: "image/png", sizes: "192x192", href: "/favicon-192.png" },
+      { rel: "icon", type: "image/png", sizes: "512x512", href: "/favicon-512.png" },
+      { rel: "shortcut icon", href: "/favicon.ico" },
+      { rel: "apple-touch-icon", sizes: "180x180", href: "/apple-touch-icon.png" },
+      { rel: "manifest", href: "/site.webmanifest" },
+      { rel: "preconnect", href: "https://fonts.googleapis.com" },
+      { rel: "preconnect", href: "https://fonts.gstatic.com", crossOrigin: "anonymous" },
+      {
+        rel: "stylesheet",
+        href: "https://fonts.googleapis.com/css2?family=Archivo+Black&family=Space+Grotesk:wght@400;500;600;700&display=swap",
+      },
+      { rel: "stylesheet", href: appCss },
+    ],
   }),
   shellComponent: RootShell,
   component: RootComponent,

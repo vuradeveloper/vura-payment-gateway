@@ -136,7 +136,7 @@ function WalletPage() {
         {(methods ?? []).map((m) => (
           <Card key={m.id} className="rounded-2xl border p-5 shadow-card flex items-center gap-4">
             <div
-              className={`w-11 h-11 rounded-lg flex items-center justify-center ${m.type === "cash" ? "bg-emerald-50 text-emerald-600" : "bg-blue-50 text-blue-600"}`}
+              className={`w-11 h-11 rounded-lg flex items-center justify-center ${m.type === "cash" ? "bg-[#FBE9E7] text-[#E1251B]" : "bg-[#F8F6F2] text-[#0B0B0C]"}`}
             >
               {m.type === "cash" ? (
                 <Banknote className="h-5 w-5" />

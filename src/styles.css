@@ -47,46 +47,46 @@
 
 :root {
   --radius: 0.875rem;
-  --background: oklch(0.995 0.002 20);
-  --foreground: oklch(0.18 0.02 20);
+  --background: #ffffff;
+  --foreground: #0b0b0c;
 
-  --card: oklch(1 0 0);
-  --card-foreground: oklch(0.18 0.02 20);
-  --popover: oklch(1 0 0);
-  --popover-foreground: oklch(0.18 0.02 20);
+  --card: #ffffff;
+  --card-foreground: #0b0b0c;
+  --popover: #ffffff;
+  --popover-foreground: #0b0b0c;
 
-  /* Vura coral red */
-  --primary: oklch(0.64 0.22 22);
-  --primary-foreground: oklch(0.99 0 0);
-  --primary-soft: oklch(0.96 0.03 22);
+  /* Vura red, black and white */
+  --primary: #e1251b;
+  --primary-foreground: #ffffff;
+  --primary-soft: #fbe9e7;
 
-  --secondary: oklch(0.97 0.005 20);
-  --secondary-foreground: oklch(0.2 0.02 20);
-  --muted: oklch(0.97 0.005 20);
-  --muted-foreground: oklch(0.5 0.02 20);
-  --accent: oklch(0.96 0.03 22);
-  --accent-foreground: oklch(0.45 0.2 22);
+  --secondary: #f8f6f2;
+  --secondary-foreground: #0b0b0c;
+  --muted: #f8f6f2;
+  --muted-foreground: #6b6560;
+  --accent: #fbe9e7;
+  --accent-foreground: #e1251b;
 
-  --destructive: oklch(0.6 0.24 27);
-  --destructive-foreground: oklch(0.99 0 0);
-  --success: oklch(0.62 0.16 150);
+  --destructive: #c91f16;
+  --destructive-foreground: #ffffff;
+  --success: #1f8a5b;
 
-  --border: oklch(0.93 0.005 20);
-  --input: oklch(0.93 0.005 20);
-  --ring: oklch(0.64 0.22 22);
+  --border: #e6e1da;
+  --input: #e6e1da;
+  --ring: #e1251b;
 
-  --sidebar: oklch(0.995 0.002 20);
-  --sidebar-foreground: oklch(0.18 0.02 20);
-  --sidebar-primary: oklch(0.64 0.22 22);
-  --sidebar-primary-foreground: oklch(0.99 0 0);
-  --sidebar-accent: oklch(0.96 0.03 22);
-  --sidebar-accent-foreground: oklch(0.45 0.2 22);
-  --sidebar-border: oklch(0.93 0.005 20);
-  --sidebar-ring: oklch(0.64 0.22 22);
+  --sidebar: #ffffff;
+  --sidebar-foreground: #0b0b0c;
+  --sidebar-primary: #e1251b;
+  --sidebar-primary-foreground: #ffffff;
+  --sidebar-accent: #fbe9e7;
+  --sidebar-accent-foreground: #e1251b;
+  --sidebar-border: #e6e1da;
+  --sidebar-ring: #e1251b;
 
-  --gradient-vura: linear-gradient(135deg, oklch(0.68 0.22 22) 0%, oklch(0.58 0.24 18) 100%);
-  --shadow-card: 0 1px 2px 0 oklch(0 0 0 / 0.04);
-  --shadow-soft: 0 8px 30px -12px oklch(0.64 0.22 22 / 0.25);
+  --gradient-vura: linear-gradient(135deg, #e1251b 0%, #b01812 100%);
+  --shadow-card: 0 1px 2px 0 rgba(11, 11, 12, 0.04);
+  --shadow-soft: 0 8px 30px -12px rgba(225, 37, 27, 0.25);
 }
 
 @layer base {
@@ -97,6 +97,7 @@
     background-color: var(--color-background);
     color: var(--color-foreground);
     font-family:
+      "Space Grotesk",
       ui-sans-serif,
       system-ui,
       -apple-system,
@@ -105,5 +106,63 @@
       "Helvetica Neue",
       Arial,
       sans-serif;
+  }
+}
+
+/* ── After Dark landing page ─────────────────────────────────────────────── */
+.font-display {
+  font-family: "Archivo Black", "Arial Black", ui-sans-serif, sans-serif;
+  letter-spacing: -0.045em;
+}
+
+.text-balance {
+  text-wrap: balance;
+}
+
+@keyframes vura-marquee {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+@keyframes vura-pulse {
+  0%,
+  100% {
+    opacity: 1;
+    box-shadow: 0 0 0 0 rgba(225, 37, 27, 0.45);
+  }
+  50% {
+    opacity: 0.65;
+    box-shadow: 0 0 0 7px rgba(225, 37, 27, 0);
+  }
+}
+
+@keyframes vura-dash {
+  to {
+    stroke-dashoffset: -28;
+  }
+}
+
+.vura-marquee {
+  animation: vura-marquee 34s linear infinite;
+}
+
+.vura-pulse {
+  animation: vura-pulse 2.2s ease-in-out infinite;
+}
+
+.vura-route {
+  stroke-dasharray: 7 9;
+  animation: vura-dash 1.8s linear infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .vura-marquee,
+  .vura-pulse,
+  .vura-route {
+    animation: none !important;
   }
 }
