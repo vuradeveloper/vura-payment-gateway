@@ -4,6 +4,7 @@ import {
   Link,
   createRootRouteWithContext,
   useRouter,
+  useRouterState,
   HeadContent,
   Scripts,
 } from "@tanstack/react-router";
@@ -80,20 +81,102 @@ function ErrorComponent({ error, reset }: { error: unknown; reset: () => void })
   );
 }
 
+/** Structured data: brand + local business. Google uses this for the brand
+ *  panel, the logo and the "Johannesburg" area; without it the site is just
+ *  text to a crawler. Keep the URLs absolute — relative ones are ignored. */
+const ORG_SCHEMA = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": "https://www.ridevura.com/#organization",
+      name: "Vura",
+      url: "https://www.ridevura.com",
+      logo: {
+        "@type": "ImageObject",
+        url: "https://www.ridevura.com/favicon-512.png",
+        width: 512,
+        height: 512,
+      },
+      image: "https://www.ridevura.com/og-image.png",
+      description:
+        "Vura is a Johannesburg ride-hailing app with verified pilots, a commission capped at R5 and Pay Later for riders.",
+      email: "info@ridevura.com",
+      areaServed: { "@type": "City", name: "Johannesburg" },
+      address: {
+        "@type": "PostalAddress",
+        addressLocality: "Johannesburg",
+        addressRegion: "Gauteng",
+        addressCountry: "ZA",
+      },
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://www.ridevura.com/#website",
+      url: "https://www.ridevura.com",
+      name: "Vura",
+      publisher: { "@id": "https://www.ridevura.com/#organization" },
+      inLanguage: "en-ZA",
+    },
+    {
+      "@type": "Service",
+      name: "Vura ride-hailing",
+      serviceType: "Ride-hailing",
+      provider: { "@id": "https://www.ridevura.com/#organization" },
+      areaServed: { "@type": "City", name: "Johannesburg" },
+      offers: {
+        "@type": "Offer",
+        description:
+          "Verified pilots, commission capped at R5 per ride, no surge, and Ride Now Pay Later.",
+        priceCurrency: "ZAR",
+      },
+    },
+  ],
+};
+
 export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()({
   head: () => ({
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "Vura — Ride Hailing" },
+      { title: "Vura — Johannesburg ride-hailing" },
       {
         name: "description",
-        content: "Book rides, manage your wallet, and track your trips with Vura.",
+        content:
+          "Vura is ride-hailing built for Johannesburg after dark: verified pilots, commission capped at R5, no surge and Ride Now Pay Later.",
       },
+      { name: "robots", content: "index, follow, max-image-preview:large, max-snippet:-1" },
+      { name: "theme-color", content: "#E1251B" },
+      // Social cards: without these, WhatsApp/X/LinkedIn show a bare link.
+      { property: "og:site_name", content: "Vura" },
+      { property: "og:type", content: "website" },
+      { property: "og:locale", content: "en_ZA" },
+      { property: "og:url", content: "https://www.ridevura.com/" },
+      { property: "og:title", content: "Vura — Johannesburg ride-hailing" },
+      {
+        property: "og:description",
+        content:
+          "Verified pilots. Commission capped at R5. No surge. Ride Now Pay Later. Built for Johannesburg after dark.",
+      },
+      { property: "og:image", content: "https://www.ridevura.com/og-image.png" },
+      { property: "og:image:width", content: "1200" },
+      { property: "og:image:height", content: "630" },
+      { property: "og:image:alt", content: "Vura — ride-hailing Johannesburg" },
+      { name: "twitter:card", content: "summary_large_image" },
+      { name: "twitter:title", content: "Vura — Johannesburg ride-hailing" },
+      {
+        name: "twitter:description",
+        content: "Verified pilots. Commission capped at R5. No surge. Ride Now Pay Later.",
+      },
+      { name: "twitter:image", content: "https://www.ridevura.com/og-image.png" },
     ],
     links: [
       { rel: "icon", href: "/favicon.ico", sizes: "any" },
+      { rel: "icon", type: "image/png", sizes: "16x16", href: "/favicon-16.png" },
       { rel: "icon", type: "image/png", sizes: "32x32", href: "/favicon-32.png" },
+      { rel: "icon", type: "image/png", sizes: "48x48", href: "/favicon-48.png" },
+      { rel: "icon", type: "image/png", sizes: "96x96", href: "/favicon-96.png" },
+      { rel: "icon", type: "image/png", sizes: "144x144", href: "/favicon-144.png" },
       { rel: "icon", type: "image/png", sizes: "192x192", href: "/favicon-192.png" },
       { rel: "icon", type: "image/png", sizes: "512x512", href: "/favicon-512.png" },
       { rel: "shortcut icon", href: "/favicon.ico" },
@@ -115,9 +198,19 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
 });
 
 function RootShell({ children }: { children: ReactNode }) {
+  const pathname = useRouterState({ select: (s) => s.location.pathname });
+  const canonical = `https://www.ridevura.com${
+    pathname === "/" ? "/" : pathname.replace(/\/+$/, "")
+  }`;
+
   return (
     <html lang="en">
       <head>
+        <link rel="canonical" href={canonical} />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(ORG_SCHEMA) }}
+        />
         <HeadContent />
       </head>
       <body>

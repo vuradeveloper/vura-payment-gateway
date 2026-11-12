@@ -158,105 +158,27 @@ function SiteHeader() {
 
 function PhoneMock({ compact = false }: { compact?: boolean }) {
   return (
-    <div className={compact ? "w-[250px]" : "w-[290px]"}>
-      <div className="rounded-[2.1rem] border border-white/15 bg-[#0B0B0C] p-2 shadow-[0_30px_80px_-20px_rgba(0,0,0,0.55)]">
-        <div className="relative h-[420px] overflow-hidden rounded-[1.65rem] bg-[#F6F2EC]">
-          {/* map treatment */}
-          <div className="absolute inset-0 bg-[#F6F2EC]" />
-          <div
-            className="absolute inset-0 opacity-70"
-            style={{
-              backgroundImage:
-                "linear-gradient(rgba(11,11,12,0.06) 1px, transparent 1px), linear-gradient(90deg, rgba(11,11,12,0.06) 1px, transparent 1px)",
-              backgroundSize: "34px 34px",
-            }}
+    <div className={compact ? "w-[226px]" : "w-[252px]"}>
+      <div className="rounded-[2.2rem] border border-white/15 bg-[#0B0B0C] p-2 shadow-[0_30px_80px_-20px_rgba(0,0,0,0.55)]">
+        {/* A real screenshot from the Vura app (booking a ride to Sandton City),
+            not a drawing of one. The frame keeps the 19.5:9 phone aspect. */}
+        <div
+          className="relative overflow-hidden rounded-[1.7rem] bg-[#F6F2EC]"
+          style={{ aspectRatio: "390 / 844" }}
+        >
+          <img
+            src="/images/app-booking.png"
+            alt="The Vura app booking a ride from Rosebank to Sandton City, with the route on the map and the fare confirmed"
+            className="absolute inset-0 h-full w-full object-cover"
+            loading="eager"
+            width={390}
+            height={844}
           />
-          <div className="absolute left-[12%] top-[20%] h-px w-[82%] -rotate-12 bg-[#0B0B0C]/15" />
-          <div className="absolute left-[18%] top-[52%] h-px w-[76%] rotate-6 bg-[#0B0B0C]/15" />
-          <div className="absolute left-[30%] top-[6%] h-[82%] w-px rotate-[10deg] bg-[#0B0B0C]/15" />
-          <div className="absolute left-[68%] top-[8%] h-[78%] w-px -rotate-[12deg] bg-[#0B0B0C]/15" />
-
-          <svg
-            viewBox="0 0 300 420"
-            className="absolute inset-0 h-full w-full"
-            fill="none"
-            aria-hidden
-          >
-            <path
-              d="M 56 330 C 86 292 102 278 126 252 C 154 222 180 228 198 194 C 218 156 232 128 252 76"
-              stroke="#FFFFFF"
-              strokeWidth="10"
-              strokeLinecap="round"
-            />
-            <path
-              d="M 56 330 C 86 292 102 278 126 252 C 154 222 180 228 198 194 C 218 156 232 128 252 76"
-              stroke="#E1251B"
-              strokeWidth="4"
-              strokeLinecap="round"
-              className="vura-route"
-            />
-          </svg>
-
-          <div className="absolute left-[13%] top-[74%] flex items-center gap-2">
-            <span className="h-3 w-3 rounded-full border-2 border-white bg-[#E1251B] shadow-[0_0_0_4px_rgba(225,37,27,0.16)]" />
-            <span className="rounded bg-white px-1.5 py-0.5 text-[8px] font-bold uppercase tracking-wider text-[#0B0B0C] shadow-sm">
-              Pickup
-            </span>
-          </div>
-          <div className="absolute right-[10%] top-[12%]">
-            <div className="flex h-8 w-8 items-center justify-center rounded-full bg-[#0B0B0C] shadow-lg">
-              <MapPin className="h-4 w-4 text-white" />
-            </div>
-          </div>
-
-          <div className="absolute left-4 right-4 top-4 flex items-center justify-between">
-            <span className="rounded-full border border-[#0B0B0C]/10 bg-white/85 px-3 py-1.5 text-[8px] font-bold uppercase tracking-[0.16em] text-[#5F5953] backdrop-blur">
-              Fri · 22:48
-            </span>
-            <span className="flex items-center gap-1.5 rounded-full border border-[#E1251B]/20 bg-white/85 px-3 py-1.5 text-[8px] font-bold uppercase tracking-[0.16em] text-[#E1251B] backdrop-blur">
-              <span className="vura-pulse h-1.5 w-1.5 rounded-full bg-[#E1251B]" />
-              Live
-            </span>
-          </div>
-
-          <div className="absolute inset-x-3 bottom-3 rounded-2xl border border-[#0B0B0C]/8 bg-white p-4 shadow-[0_10px_30px_-12px_rgba(0,0,0,0.3)]">
-            <div className="flex items-center justify-between">
-              <div>
-                <p className="text-[8px] font-bold uppercase tracking-[0.2em] text-[#8A837D]">
-                  Pilot 014 · Verified
-                </p>
-                <p className="mt-1 text-sm font-bold text-[#0B0B0C]">Arriving 3 min</p>
-              </div>
-              <div className="flex items-center gap-1 rounded-full bg-[#F6F2EC] px-2.5 py-1 text-[#0B0B0C]">
-                <Star className="h-3 w-3 fill-[#E1251B] text-[#E1251B]" />
-                <span className="text-[10px] font-bold">4.9</span>
-              </div>
-            </div>
-
-            <div className="mt-3 flex items-center gap-3 border-t border-[#E6E1DA] pt-3">
-              <div className="flex h-9 w-9 items-center justify-center rounded-full bg-[#E1251B] text-[10px] font-black text-white">
-                P14
-              </div>
-              <div className="min-w-0 flex-1">
-                <p className="truncate text-[11px] font-bold text-[#0B0B0C]">Toyota Corolla</p>
-                <p className="mt-0.5 text-[9px] font-medium uppercase tracking-wider text-[#8A837D]">
-                  CA 123 456
-                </p>
-              </div>
-              <div className="text-right">
-                <p className="text-[8px] font-bold uppercase tracking-wider text-[#8A837D]">
-                  Max fee
-                </p>
-                <p className="text-lg font-black leading-none text-[#E1251B]">R5</p>
-              </div>
-            </div>
-          </div>
         </div>
       </div>
     </div>
   );
 }
-
 function Hero() {
   return (
     <section className="relative overflow-hidden bg-white">
