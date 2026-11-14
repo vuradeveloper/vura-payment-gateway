@@ -187,11 +187,9 @@ function Hero() {
           <Eyebrow>Vura / Ride-hailing / South Africa</Eyebrow>
 
           <h1 className="font-display text-[clamp(3.4rem,8.8vw,7.4rem)] uppercase leading-[0.84] tracking-[-0.05em] text-[#0B0B0C]">
-            Rides that
+            Defy the
             <br />
-            work for
-            <br />
-            <span className="text-[#E1251B]">everyone.</span>
+            <span className="text-[#E1251B]">odds.</span>
           </h1>
 
           <p className="mt-7 max-w-xl text-xl font-semibold leading-snug tracking-tight text-[#0B0B0C] md:text-2xl">
@@ -294,17 +292,28 @@ function Hero() {
               Our philosophy
             </p>
             <h2 className="font-display mt-3 text-[clamp(2rem,4.4vw,3.4rem)] uppercase leading-[0.88] tracking-[-0.04em] text-[#0B0B0C]">
-              Defy the <span className="text-[#E1251B]">odds.</span>
+              Rides that
+              <br />
+              work for <span className="text-[#E1251B]">everyone.</span>
             </h2>
+            <p className="mt-2 text-[10px] font-semibold uppercase tracking-[0.16em] text-[#8A837D]">
+              Impossible is just a word.
+            </p>
           </div>
           <div className="border-l-2 border-[#E1251B] pl-5">
-            <p className="text-sm font-semibold italic tracking-tight text-[#0B0B0C] md:text-base">
-              &ldquo;Impossible is just a word.&rdquo;
+            <blockquote className="text-sm font-semibold italic leading-snug tracking-tight text-[#0B0B0C] md:text-base">
+              &ldquo;Here&apos;s to the crazy ones. The misfits. The rebels. The troublemakers. The
+              round pegs in the square holes. The ones who{" "}
+              <span className="not-italic text-[#E1251B]">see things differently.</span>&rdquo;
+            </blockquote>
+            <p className="mt-2 text-[9px] font-bold uppercase tracking-[0.16em] text-[#8A837D]">
+              — Think Different, 1997
             </p>
-            <p className="mt-2 max-w-xl text-[11px] leading-relaxed text-[#6B6560]">
-              We built Vura by asking what riders and drivers actually need, ignoring how
-              it&apos;s always been done, and refusing to ship something that doesn&apos;t change
-              things.
+            <p className="mt-3 max-w-xl text-[11px] leading-relaxed text-[#6B6560]">
+              We built Vura the way Apple once built computers — by asking what the world actually
+              needs, ignoring how it&apos;s always been done, and refusing to ship something that
+              doesn&apos;t change things. South Africa deserves a ride-hailing app that&apos;s
+              genuinely on its side.
             </p>
           </div>
         </div>
@@ -347,7 +356,7 @@ function HowItWorks() {
             {
               icon: MapPin,
               title: "Book and ride",
-              text: "Enter your pickup and destination, choose your ride type, and go. Cash rides welcome too.",
+              text: "Enter your pickup and destination, choose your ride type, and go. No wallet, no problem — select cash when you book. Vura works however you do.",
             },
           ].map((step, i) => (
             <div key={step.title} className="relative border border-[#E6E1DA] bg-white p-6">
@@ -564,7 +573,7 @@ function Everyone() {
               {
                 icon: Users,
                 title: "For riders",
-                text: "Safe, affordable rides you can count on. Verified drivers, live tracking and fares that stay fair.",
+                text: "Safe, affordable rides you can count on. Instant EFT top-ups — top up straight from your South African bank account, no card, no hassle, zero fees.",
               },
               {
                 icon: Wallet,
@@ -714,37 +723,41 @@ function Fares() {
             </h2>
             <p className="mt-6 max-w-md text-sm leading-relaxed text-[#6B6560] md:text-base">
               Other platforms take a growing cut of everything you earn. Vura caps it at R5 per
-              trip — and on some trips, we take nothing at all. On a R200 trip, the driver keeps
-              R195. The rider pays a 4% booking fee on top, so it never comes out of the
-              driver&apos;s fare. The more you drive, the more you keep.
+              trip — and on some trips, we take nothing at all. On a R200 trip, you keep R195. The
+              rider pays a 4% booking fee on top, so it never comes out of the driver&apos;s fare.
+              The more you drive, the more you keep.
             </p>
             <div className="mt-7 flex flex-wrap gap-x-6 gap-y-3 text-[9px] font-bold uppercase tracking-[0.16em] text-[#8A837D]">
               <span className="flex items-center gap-1.5">
                 <Percent className="h-3.5 w-3.5 text-[#E1251B]" /> 10% commission
               </span>
               <span className="flex items-center gap-1.5">
-                <ShieldCheck className="h-3.5 w-3.5 text-[#E1251B]" /> Capped at R5
+                <ShieldCheck className="h-3.5 w-3.5 text-[#E1251B]" /> Truly affordable fares
               </span>
               <span className="flex items-center gap-1.5">
                 <Zap className="h-3.5 w-3.5 text-[#E1251B]" /> No surge
               </span>
             </div>
+            <p className="mt-4 max-w-md text-[10px] leading-relaxed text-[#8A837D]">
+              Because our commission is capped at R5, drivers earn more and passengers pay less.
+              Everyone wins.
+            </p>
           </div>
 
           <div className="space-y-4">
             <div className="border border-[#E6E1DA] bg-[#F8F6F2] p-6">
               <div className="flex items-center justify-between">
                 <p className="text-[9px] font-black uppercase tracking-[0.2em] text-[#8A837D]">
-                  On a R200 trip
+                  Max commission per trip
                 </p>
                 <span className="border border-[#E1251B]/25 bg-white px-2 py-1 text-[8px] font-bold uppercase tracking-wider text-[#E1251B]">
-                  The split
+                  On a R200 trip
                 </span>
               </div>
               <div className="mt-7 grid grid-cols-2 gap-5">
                 <div>
                   <p className="text-[9px] font-bold uppercase tracking-[0.16em] text-[#8A837D]">
-                    Driver keeps
+                    You keep
                   </p>
                   <p className="font-display mt-1 text-5xl leading-none text-[#0B0B0C]">R195</p>
                 </div>
@@ -753,18 +766,24 @@ function Fares() {
                     Vura takes
                   </p>
                   <p className="font-display mt-1 text-5xl leading-none text-[#E1251B]">R5</p>
+                  <p className="mt-1 text-[9px] font-semibold uppercase tracking-[0.14em] text-[#8A837D]">
+                    flat — always
+                  </p>
                 </div>
               </div>
               <div className="mt-6 h-2 w-full bg-[#E6E1DA]">
                 <div className="h-2 bg-[#E1251B]" style={{ width: "97.5%" }} />
               </div>
               <p className="mt-3 text-[10px] leading-relaxed text-[#8A837D]">
-                On a R40 trip, the driver keeps R36 and Vura takes R4. The cap only matters when 10%
-                would be more than R5.
+                On a R40 trip, you keep R36 and Vura takes R4. The cap only matters when 10% would be
+                more than R5.
               </p>
               <p className="mt-2 text-[10px] leading-relaxed text-[#8A837D]">
-                On a R500 trip, the driver keeps R495. When Vura runs R0-commission promotions, the
-                driver keeps every rand.
+                On a R500 trip, you keep R495. When Vura runs R0-commission promotions, you keep
+                every rand.
+              </p>
+              <p className="mt-2 text-[10px] leading-relaxed text-[#8A837D]">
+                We grow when you grow — not by taking more from you.
               </p>
             </div>
 
@@ -856,8 +875,8 @@ function Safety() {
           />
           <Feature
             icon={MapPin}
-            title="Real-time trip tracking"
-            text="Every ride is tracked from pickup to drop-off, so you always know where you are."
+            title="Live trip tracking"
+            text="Watch your driver approach in real time. Share your trip with anyone you trust."
           />
           <Feature
             icon={Siren}
@@ -871,8 +890,8 @@ function Safety() {
           />
           <Feature
             icon={Headphones}
-            title="24/7 human support"
-            text="Real people on call around the clock — whenever you need them."
+            title="In-app support"
+            text="Something went wrong? Reach a real person directly in the app. No hold music, no call centres."
           />
           <Feature
             icon={Star}
@@ -905,17 +924,20 @@ function Drivers() {
               <span className="text-[#E1251B]">earn.</span>
             </h2>
             <p className="mt-6 max-w-lg text-sm leading-relaxed text-[#6B6560] md:text-base">
-              Every other platform takes a percentage cut that grows as you do. Vura caps it at R5
-              per trip — and on some trips, we take nothing at all. The more you drive, the more you
-              keep.
+              Every other platform takes a percentage cut that grows as you do — punishing your
+              success. Vura does it differently. We charge a flat commission capped at R5 per trip,
+              no matter how much you earn. The more you make, the more you keep.
             </p>
             <div className="mt-7 grid gap-2 sm:grid-cols-2">
               {[
-                { icon: ShieldCheck, label: "R5 max commission" },
-                { icon: CreditCard, label: "See your net before you accept" },
-                { icon: BadgeCheck, label: "Founding Driver badge" },
-                { icon: Clock3, label: "Request a payout from the app" },
-                { icon: Star, label: "A rating that means something" },
+                { icon: ShieldCheck, label: "R5 maximum commission — never more, ever" },
+                {
+                  icon: CreditCard,
+                  label: "Transparent pricing — see exactly what you earn before you accept",
+                },
+                { icon: BadgeCheck, label: "No surprise deductions — your fare is your fare" },
+                { icon: Clock3, label: "Flexible hours — drive when it suits you" },
+                { icon: Wallet, label: "Request a payout from the app" },
                 { icon: Headphones, label: "Priority driver support" },
               ].map((item) => (
                 <div
@@ -987,7 +1009,7 @@ function FinalCta() {
 
       <div className="relative mx-auto max-w-5xl px-5 text-center md:px-8">
         <p className="text-[10px] font-bold uppercase tracking-[0.3em] text-[#E1251B]">
-          Vura · Johannesburg · South Africa
+          Ready to ride differently?
         </p>
         <h2 className="font-display mt-5 text-[clamp(3.1rem,8.5vw,7.6rem)] uppercase leading-[0.82] tracking-[-0.05em]">
           Move without
@@ -1061,16 +1083,16 @@ function Footer() {
             <p className="text-[9px] font-black uppercase tracking-[0.2em] text-white/30">Company</p>
             <div className="mt-4 flex flex-col gap-2.5 text-[11px] font-semibold text-white/60">
               <Link to="/contact" className="transition hover:text-[#E1251B]">
-                Contact
+                Support &amp; Contact
               </Link>
               <Link to="/terms" className="transition hover:text-[#E1251B]">
-                Terms
+                Terms &amp; Conditions
               </Link>
               <Link to="/privacy" className="transition hover:text-[#E1251B]">
-                Privacy
+                Privacy Policy
               </Link>
               <Link to="/refunds" className="transition hover:text-[#E1251B]">
-                Refunds
+                Refund Policy
               </Link>
             </div>
           </div>
@@ -1097,10 +1119,10 @@ function Footer() {
         <div className="mt-10 flex flex-col gap-3 border-t border-white/10 pt-6 text-[9px] leading-relaxed text-white/30 sm:flex-row sm:items-center sm:justify-between">
           <p>© {new Date().getFullYear()} Dorfnew (Pty) Ltd. All rights reserved.</p>
           <p className="max-w-xl sm:text-right">
-            Pay Later is an Android-only credit feature. Eligibility and terms apply. SOS alerts are
-            email-based and do not automatically contact emergency services. Johannesburg
-            photography by Nico Roets / South African Tourism (CC BY 2.0). Stock photography via
-            Pexels. Map data © OpenStreetMap contributors.
+            Instant EFT · South Africa · Pay Later is an Android-only credit feature. Eligibility
+            and terms apply. SOS alerts are email-based and do not automatically contact emergency
+            services. Johannesburg photography by Nico Roets / South African Tourism (CC BY 2.0).
+            Stock photography via Pexels. Map data © OpenStreetMap contributors.
           </p>
         </div>
       </div>
