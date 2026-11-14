@@ -182,7 +182,7 @@ function PhoneMock({ compact = false }: { compact?: boolean }) {
 function Hero() {
   return (
     <section className="relative overflow-hidden bg-white">
-      <div className="mx-auto grid max-w-7xl items-center gap-12 px-5 pb-14 pt-14 md:px-8 md:pb-20 md:pt-20 lg:grid-cols-[1.02fr_0.98fr] lg:gap-10">
+      <div className="mx-auto grid max-w-7xl items-center gap-12 px-5 pb-10 pt-14 md:px-8 md:pb-12 md:pt-20 lg:grid-cols-[1.02fr_0.98fr] lg:gap-10">
         <div className="relative z-10">
           <Eyebrow>Vura / Ride-hailing / South Africa</Eyebrow>
 
@@ -285,47 +285,29 @@ function Hero() {
           <div className="absolute -right-2 -top-2 hidden h-20 w-20 border-r-2 border-t-2 border-[#0B0B0C] sm:block" />
         </div>
       </div>
-    </section>
-  );
-}
 
-function Manifesto() {
-  return (
-    <section
-      id="manifesto"
-      className="relative overflow-hidden border-y border-white/10 bg-[#0B0B0C] py-16 text-white md:py-24"
-    >
-      <div className="mx-auto grid max-w-7xl gap-12 px-5 md:px-8 lg:grid-cols-[0.95fr_1.05fr] lg:items-center">
-        <div>
-          <Eyebrow tone="dark">Our philosophy</Eyebrow>
-          <h2 className="font-display text-[clamp(2.8rem,6.4vw,5.6rem)] uppercase leading-[0.86] tracking-[-0.045em]">
-            Defy the
-            <br />
-            <span className="text-[#E1251B]">odds.</span>
-          </h2>
-          <p className="mt-5 text-xl font-semibold tracking-tight text-white/80 md:text-2xl">
-            Impossible is just a word.
-          </p>
-          <p className="mt-5 max-w-lg text-sm leading-relaxed text-white/55 md:text-base">
-            We built Vura the same way — by asking what riders and drivers actually need, ignoring
-            how it&apos;s always been done, and refusing to ship something that doesn&apos;t change
-            things. South Africa deserves a ride-hailing app that&apos;s genuinely on its side.
-          </p>
+      <div id="manifesto" className="relative mx-auto max-w-7xl px-5 pb-14 md:px-8 md:pb-20">
+        <div className="grid gap-5 border-t border-[#E6E1DA] pt-7 md:grid-cols-[0.95fr_1.05fr] md:items-center md:gap-10">
+          <div>
+            <p className="flex items-center gap-2.5 text-[10px] font-bold uppercase tracking-[0.28em] text-[#E1251B]">
+              <span className="h-1.5 w-1.5 rounded-full bg-[#E1251B]" />
+              Our philosophy
+            </p>
+            <h2 className="font-display mt-3 text-[clamp(2rem,4.4vw,3.4rem)] uppercase leading-[0.88] tracking-[-0.04em] text-[#0B0B0C]">
+              Defy the <span className="text-[#E1251B]">odds.</span>
+            </h2>
+          </div>
+          <div className="border-l-2 border-[#E1251B] pl-5">
+            <p className="text-sm font-semibold italic tracking-tight text-[#0B0B0C] md:text-base">
+              &ldquo;Impossible is just a word.&rdquo;
+            </p>
+            <p className="mt-2 max-w-xl text-[11px] leading-relaxed text-[#6B6560]">
+              We built Vura by asking what riders and drivers actually need, ignoring how
+              it&apos;s always been done, and refusing to ship something that doesn&apos;t change
+              things.
+            </p>
+          </div>
         </div>
-
-        <figure className="border-l-2 border-[#E1251B] pl-6 md:pl-10">
-          <span aria-hidden className="font-display block text-6xl leading-[0.7] text-[#E1251B]">
-            &ldquo;
-          </span>
-          <blockquote className="mt-3 text-lg font-semibold italic leading-snug tracking-tight text-white/90 md:text-2xl">
-            Here&apos;s to the crazy ones. The misfits. The rebels. The troublemakers. The round pegs
-            in the square holes. The ones who{" "}
-            <span className="not-italic text-[#E1251B]">see things differently.</span>
-          </blockquote>
-          <figcaption className="mt-5 text-[10px] font-bold uppercase tracking-[0.2em] text-white/35">
-            — Think Different, 1997
-          </figcaption>
-        </figure>
       </div>
     </section>
   );
@@ -1130,7 +1112,6 @@ function LandingPage() {
   return (
     <div className="min-h-screen bg-white text-[#0B0B0C] selection:bg-[#E1251B] selection:text-white">
       <SiteHeader />
-      <Manifesto />
       <Hero />
       <Ticker />
       <Everyone />
