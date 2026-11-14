@@ -25,7 +25,7 @@ export function LegalPage({
             <span className="hidden border-l border-[#E6E1DA] pl-3 text-[9px] font-bold uppercase leading-tight tracking-[0.24em] text-[#7A736D] sm:block">
               Johannesburg
               <br />
-              After dark
+              South Africa
             </span>
           </Link>
 
@@ -48,7 +48,7 @@ export function LegalPage({
           </div>
 
           <Link
-            to="/contact"
+            to="/get-the-app"
             className="inline-flex h-9 items-center gap-1.5 rounded-full bg-[#E1251B] px-4 text-[10px] font-black uppercase tracking-[0.14em] text-white transition hover:bg-[#0B0B0C]"
           >
             Get the app <ArrowRight className="h-3.5 w-3.5" />

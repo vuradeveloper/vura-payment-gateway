@@ -13,6 +13,7 @@ import { Route as IndexRouteImport } from './routes/index'
 import { Route as AuthenticatedRouteRouteImport } from './routes/_authenticated/route'
 import { Route as AuthRouteImport } from './routes/auth'
 import { Route as ContactRouteImport } from './routes/contact'
+import { Route as GetTheAppRouteImport } from './routes/get-the-app'
 import { Route as PrivacyRouteImport } from './routes/privacy'
 import { Route as RefundRouteImport } from './routes/refund'
 import { Route as RefundsRouteImport } from './routes/refunds'
@@ -45,6 +46,11 @@ const AuthRoute = AuthRouteImport.update({
 const ContactRoute = ContactRouteImport.update({
   id: '/contact',
   path: '/contact',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const GetTheAppRoute = GetTheAppRouteImport.update({
+  id: '/get-the-app',
+  path: '/get-the-app',
   getParentRoute: () => rootRouteImport,
 } as any)
 const PrivacyRoute = PrivacyRouteImport.update({
@@ -123,6 +129,7 @@ export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/auth': typeof AuthRoute
   '/contact': typeof ContactRoute
+  '/get-the-app': typeof GetTheAppRoute
   '/privacy': typeof PrivacyRoute
   '/refund': typeof RefundRoute
   '/refunds': typeof RefundsRoute
@@ -142,6 +149,7 @@ export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/auth': typeof AuthRoute
   '/contact': typeof ContactRoute
+  '/get-the-app': typeof GetTheAppRoute
   '/privacy': typeof PrivacyRoute
   '/refund': typeof RefundRoute
   '/refunds': typeof RefundsRoute
@@ -163,6 +171,7 @@ export interface FileRoutesById {
   '/_authenticated': typeof AuthenticatedRouteRouteWithChildren
   '/auth': typeof AuthRoute
   '/contact': typeof ContactRoute
+  '/get-the-app': typeof GetTheAppRoute
   '/privacy': typeof PrivacyRoute
   '/refund': typeof RefundRoute
   '/refunds': typeof RefundsRoute
@@ -184,6 +193,7 @@ export interface FileRouteTypes {
     | '/'
     | '/auth'
     | '/contact'
+    | '/get-the-app'
     | '/privacy'
     | '/refund'
     | '/refunds'
@@ -203,6 +213,7 @@ export interface FileRouteTypes {
     | '/'
     | '/auth'
     | '/contact'
+    | '/get-the-app'
     | '/privacy'
     | '/refund'
     | '/refunds'
@@ -223,6 +234,7 @@ export interface FileRouteTypes {
     | '/_authenticated'
     | '/auth'
     | '/contact'
+    | '/get-the-app'
     | '/privacy'
     | '/refund'
     | '/refunds'
@@ -244,6 +256,7 @@ export interface RootRouteChildren {
   AuthenticatedRouteRoute: typeof AuthenticatedRouteRouteWithChildren
   AuthRoute: typeof AuthRoute
   ContactRoute: typeof ContactRoute
+  GetTheAppRoute: typeof GetTheAppRoute
   PrivacyRoute: typeof PrivacyRoute
   RefundRoute: typeof RefundRoute
   RefundsRoute: typeof RefundsRoute
@@ -279,6 +292,13 @@ declare module '@tanstack/react-router' {
       path: '/contact'
       fullPath: '/contact'
       preLoaderRoute: typeof ContactRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/get-the-app': {
+      id: '/get-the-app'
+      path: '/get-the-app'
+      fullPath: '/get-the-app'
+      preLoaderRoute: typeof GetTheAppRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/privacy': {
@@ -414,6 +434,7 @@ const rootRouteChildren: RootRouteChildren = {
   AuthenticatedRouteRoute: AuthenticatedRouteRouteWithChildren,
   AuthRoute: AuthRoute,
   ContactRoute: ContactRoute,
+  GetTheAppRoute: GetTheAppRoute,
   PrivacyRoute: PrivacyRoute,
   RefundRoute: RefundRoute,
   RefundsRoute: RefundsRoute,

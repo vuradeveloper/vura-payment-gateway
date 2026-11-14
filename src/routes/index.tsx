@@ -8,19 +8,16 @@ import {
   Check,
   Clock3,
   CreditCard,
-  Fingerprint,
   Headphones,
-  LockKeyhole,
   MapPin,
-  Moon,
-  Music2,
+  HeartHandshake,
   Percent,
-  Route as RouteIcon,
   Share2,
   ShieldCheck,
   Siren,
   Smartphone,
   Star,
+  Users,
   Wallet,
   Zap,
 } from "lucide-react";
@@ -28,11 +25,11 @@ import {
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "Vura — Your night is not over. Johannesburg ride-hailing." },
+      { title: "Vura — Rides that work for everyone. Johannesburg ride-hailing." },
       {
         name: "description",
         content:
-          "Ride-hailing built for Johannesburg after dark. Verified pilots, a commission capped at R5, zero surge surprises and Pay Later on Android.",
+          "Vura is the e-hailing app South Africa has been waiting for — safe, affordable rides for passengers, and fair earnings for drivers. R5 max commission. Ride now, pay later.",
       },
       { name: "theme-color", content: "#FFFFFF" },
     ],
@@ -42,7 +39,7 @@ export const Route = createFileRoute("/")({
 
 const PILOTS = [
   {
-    id: "PILOT 014",
+    id: "DRIVER 014",
     area: "Sandton",
     car: "Toyota Corolla · White",
     rating: "4.9",
@@ -50,7 +47,7 @@ const PILOTS = [
     image: "/images/car-17120616.jpg",
   },
   {
-    id: "PILOT 027",
+    id: "DRIVER 027",
     area: "Rosebank",
     car: "VW Polo · Black",
     rating: "4.8",
@@ -58,7 +55,7 @@ const PILOTS = [
     image: "/images/car-4713813.jpg",
   },
   {
-    id: "PILOT 039",
+    id: "DRIVER 039",
     area: "Braamfontein",
     car: "Suzuki Swift · Silver",
     rating: "5.0",
@@ -115,16 +112,16 @@ function SiteHeader() {
           <span className="hidden border-l border-[#E6E1DA] pl-3 text-[9px] font-bold uppercase leading-tight tracking-[0.24em] text-[#7A736D] sm:block">
             Johannesburg
             <br />
-            After dark
+            South Africa
           </span>
         </Link>
 
         <div className="hidden items-center gap-6 text-[11px] font-bold uppercase tracking-[0.16em] text-[#5F5953] lg:flex">
-          <a href="#night" className="transition hover:text-[#E1251B]">
-            The Night Shift
+          <a href="#manifesto" className="transition hover:text-[#E1251B]">
+            Our philosophy
           </a>
-          <a href="#pilots" className="transition hover:text-[#E1251B]">
-            Pilots
+          <a href="#how" className="transition hover:text-[#E1251B]">
+            How it works
           </a>
           <a href="#fares" className="transition hover:text-[#E1251B]">
             Fares
@@ -148,7 +145,7 @@ function SiteHeader() {
             Driver sign-up
           </Link>
           <Link
-            to="/contact"
+            to="/get-the-app"
             className="inline-flex h-9 items-center gap-1.5 rounded-full bg-[#E1251B] px-4 text-[10px] font-black uppercase tracking-[0.14em] text-white transition hover:bg-[#0B0B0C]"
           >
             Get the app <ArrowUpRight className="h-3.5 w-3.5" />
@@ -187,36 +184,36 @@ function Hero() {
     <section className="relative overflow-hidden bg-white">
       <div className="mx-auto grid max-w-7xl items-center gap-12 px-5 pb-14 pt-14 md:px-8 md:pb-20 md:pt-20 lg:grid-cols-[1.02fr_0.98fr] lg:gap-10">
         <div className="relative z-10">
-          <Eyebrow>Vura / Johannesburg / After dark</Eyebrow>
+          <Eyebrow>Vura / Ride-hailing / South Africa</Eyebrow>
 
           <h1 className="font-display text-[clamp(3.4rem,8.8vw,7.4rem)] uppercase leading-[0.84] tracking-[-0.05em] text-[#0B0B0C]">
-            Your night
+            Rides that
             <br />
-            is not
+            work for
             <br />
-            <span className="text-[#E1251B]">over.</span>
+            <span className="text-[#E1251B]">everyone.</span>
           </h1>
 
           <p className="mt-7 max-w-xl text-xl font-semibold leading-snug tracking-tight text-[#0B0B0C] md:text-2xl">
-            Verified pilots. Instant dispatch. Zero surge surprises at 2 AM.
+            Safe, affordable rides for passengers. Fair earnings for drivers.
           </p>
           <p className="mt-3 max-w-lg text-sm leading-relaxed text-[#6B6560] md:text-base">
-            Vura is ride-hailing built for the city after the last song. For the people who close
-            the venue, not the night.
+            Vura is the e-hailing app South Africa has been waiting for. Built differently, on
+            purpose.
           </p>
 
           <div className="mt-8 flex flex-wrap items-center gap-3">
             <Link
-              to="/contact"
+              to="/get-the-app"
               className="inline-flex h-12 items-center gap-2 rounded-full bg-[#E1251B] px-6 text-[11px] font-black uppercase tracking-[0.14em] text-white transition hover:bg-[#0B0B0C]"
             >
-              Get early access <ArrowRight className="h-4 w-4" />
+              Get the app <ArrowRight className="h-4 w-4" />
             </Link>
             <Link
               to="/contact"
               className="inline-flex h-12 items-center gap-2 rounded-full border border-[#0B0B0C]/20 bg-white px-6 text-[11px] font-black uppercase tracking-[0.14em] text-[#0B0B0C] transition hover:border-[#E1251B] hover:text-[#E1251B]"
             >
-              Become a Founding Pilot <ArrowUpRight className="h-4 w-4" />
+              Become a driver <ArrowUpRight className="h-4 w-4" />
             </Link>
           </div>
 
@@ -228,7 +225,7 @@ function Hero() {
               <CreditCard className="h-3.5 w-3.5 text-[#E1251B]" /> Pay Later on Android
             </span>
             <span className="flex items-center gap-1.5">
-              <Moon className="h-3.5 w-3.5 text-[#E1251B]" /> Built for the night shift
+              <Users className="h-3.5 w-3.5 text-[#E1251B]" /> For riders and drivers
             </span>
           </div>
 
@@ -253,7 +250,7 @@ function Hero() {
           <div className="relative h-[520px] overflow-hidden bg-[#0B0B0C] sm:h-[560px]">
             <img
               src={IMG.city}
-              alt="Johannesburg skyline at night"
+              alt="Johannesburg skyline"
               className="absolute inset-0 h-full w-full object-cover"
               loading="eager"
               fetchPriority="high"
@@ -261,11 +258,11 @@ function Hero() {
             <div className="absolute inset-0 bg-gradient-to-t from-[#0B0B0C] via-[#0B0B0C]/25 to-[#0B0B0C]/10" />
             <div className="absolute left-4 right-4 top-4 flex items-center justify-between">
               <span className="rounded-full bg-white/90 px-3 py-1.5 text-[8px] font-black uppercase tracking-[0.16em] text-[#0B0B0C] backdrop-blur">
-                Johannesburg · 22:48
+                Johannesburg · South Africa
               </span>
               <span className="flex items-center gap-1.5 rounded-full bg-[#E1251B] px-3 py-1.5 text-[8px] font-black uppercase tracking-[0.16em] text-white">
                 <span className="vura-pulse h-1.5 w-1.5 rounded-full bg-white" />
-                Night dispatch
+                Vura dispatch
               </span>
             </div>
 
@@ -310,8 +307,7 @@ function Manifesto() {
             Impossible is just a word.
           </p>
           <p className="mt-5 max-w-lg text-sm leading-relaxed text-white/55 md:text-base">
-            Vura is the ride-hailing app built around you — safe, affordable, and fair to the people
-            behind the wheel. We built it by asking what riders and drivers actually need, ignoring
+            We built Vura the same way — by asking what riders and drivers actually need, ignoring
             how it&apos;s always been done, and refusing to ship something that doesn&apos;t change
             things. South Africa deserves a ride-hailing app that&apos;s genuinely on its side.
           </p>
@@ -406,20 +402,19 @@ function PayLaterBand() {
               Ride Now, Pay Later · Android only
             </p>
             <h2 className="font-display text-[clamp(2.7rem,5.6vw,4.9rem)] uppercase leading-[0.88] tracking-[-0.045em]">
-              Ride all month.
+              Ride now.
               <br />
-              Pay on payday.
+              Pay later.
             </h2>
             <p className="mt-4 max-w-xl text-sm leading-relaxed text-white/75 md:text-base">
-              Split the month, not your night. Eligible riders can settle at month-end with 0%
-              interest and no late fee. Your money, your rules — flexibility no other app in South
-              Africa gives you.
+              Your money, your rules. Vura gives riders the flexibility no other app in South Africa
+              does. Ride now and settle at month-end with 0% interest and no late fee.
             </p>
           </div>
 
           <div className="grid grid-cols-3 gap-2">
             {[
-              { n: "01", title: "Ride", text: "Book the night like normal." },
+              { n: "01", title: "Ride", text: "Book a ride like normal." },
               { n: "02", title: "Rack it up", text: "Your rides collect in one balance." },
               { n: "03", title: "Payday", text: "Settle at month-end. 0% interest." },
             ].map((step) => (
@@ -496,7 +491,7 @@ function Ticker() {
     <div className="border-y border-white/10 bg-[#0B0B0C] text-white">
       <div className="flex overflow-hidden">
         <div className="hidden shrink-0 items-center border-r border-white/15 px-5 py-3 text-[9px] font-black uppercase leading-tight tracking-[0.2em] text-[#E1251B] sm:flex">
-          Night shift
+          Vura
           <br />
           index
         </div>
@@ -510,31 +505,30 @@ function Ticker() {
         </div>
       </div>
       <p className="border-t border-white/10 px-5 py-1.5 text-[8px] font-bold uppercase tracking-[0.18em] text-white/40">
-        Typical Friday-night wait · live ETA is shown in the app
+        Typical wait in Johannesburg · live ETA is shown in the app
       </p>
     </div>
   );
 }
 
-function NightShift() {
+function Everyone() {
   return (
-    <section id="night" className="border-b border-[#E6E1DA] bg-white py-20 md:py-28">
+    <section id="riders" className="border-b border-[#E6E1DA] bg-white py-20 md:py-28">
       <div className="mx-auto max-w-7xl px-5 md:px-8">
         <div className="grid gap-10 lg:grid-cols-[0.92fr_1.08fr] lg:items-end">
           <div>
-            <Eyebrow>The night shift</Eyebrow>
+            <Eyebrow>For riders and drivers</Eyebrow>
             <h2 className="font-display text-[clamp(2.6rem,5.8vw,5.1rem)] uppercase leading-[0.9] tracking-[-0.04em] text-[#0B0B0C]">
-              The city doesn&apos;t
+              One app.
               <br />
-              clock out.
+              Both sides.
               <br />
-              <span className="text-[#E1251B]">Neither do we.</span>
+              <span className="text-[#E1251B]">Better for everyone.</span>
             </h2>
           </div>
           <p className="max-w-md text-sm leading-relaxed text-[#6B6560] md:text-base lg:pb-2">
-            Most ride apps are built for the 9-to-5. Vura is built for 22:00 to 03:00 — the venue
-            exits, the late studio sessions, the people who make this city worth staying out for.
-            Not a utility. A way home that belongs to the night.
+            Vura is the e-hailing app South Africa has been waiting for — safe, affordable rides
+            for passengers, and fair earnings for drivers. Built differently, on purpose.
           </p>
         </div>
 
@@ -543,42 +537,42 @@ function NightShift() {
             <div className="relative col-span-2 h-[300px] overflow-hidden bg-[#0B0B0C] md:h-[360px]">
               <img
                 src={IMG.club}
-                alt="A packed Johannesburg club in red light"
+                alt="A Vura ride in Johannesburg"
                 className="absolute inset-0 h-full w-full object-cover"
                 loading="lazy"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-[#0B0B0C] via-transparent to-transparent" />
               <div className="absolute bottom-4 left-4">
                 <p className="text-[9px] font-black uppercase tracking-[0.2em] text-white/60">
-                  02:00 · The exit
+                  A Vura ride
                 </p>
-                <p className="mt-1 text-lg font-bold text-white">The night is still going.</p>
+                <p className="mt-1 text-lg font-bold text-white">Rides that work for everyone.</p>
               </div>
             </div>
 
             <div className="relative h-[190px] overflow-hidden bg-[#0B0B0C]">
               <img
                 src={IMG.bridgeCar}
-                alt="Black car waiting under a city bridge at night"
+                alt="A Vura driver waiting at pickup"
                 className="absolute inset-0 h-full w-full object-cover"
                 loading="lazy"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-[#0B0B0C] via-transparent to-transparent" />
               <p className="absolute bottom-3 left-3 text-[9px] font-black uppercase tracking-[0.18em] text-white">
-                The secure pickup
+                The pickup
               </p>
             </div>
 
             <div className="relative h-[190px] overflow-hidden bg-[#0B0B0C]">
               <img
                 src={IMG.drive}
-                alt="Driver at the wheel in the city at night"
+                alt="A Vura driver at the wheel"
                 className="absolute inset-0 h-full w-full object-cover"
                 loading="lazy"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-[#0B0B0C] via-transparent to-transparent" />
               <p className="absolute bottom-3 left-3 text-[9px] font-black uppercase tracking-[0.18em] text-white">
-                The night shift
+                The driver
               </p>
             </div>
           </div>
@@ -586,19 +580,19 @@ function NightShift() {
           <div className="flex flex-col justify-center gap-4">
             {[
               {
-                icon: Moon,
-                title: "The Night Shift",
-                text: "Late-night hospitality, creators and venue crews. Cars staged when the city empties, not after it has already given up.",
+                icon: Users,
+                title: "For riders",
+                text: "Safe, affordable rides you can count on. Verified drivers, live tracking and fares that stay fair.",
               },
               {
-                icon: Music2,
-                title: "The Music Circuit",
-                text: "From Braamfontein to Rosebank. One app for the nights that do not fit a timetable — and the people who make them happen.",
+                icon: Wallet,
+                title: "For drivers",
+                text: "Keep what you earn. A flat commission capped at R5 per trip — the more you make, the more you keep.",
               },
               {
-                icon: MapPin,
-                title: "The City Insider",
-                text: "Pilots who know the shortcuts, the secure pickups and the streets that actually move at 2 AM.",
+                icon: HeartHandshake,
+                title: "For everyone",
+                text: "One app that works for passengers and drivers, not one at the other's expense.",
               },
             ].map((card) => (
               <div
@@ -631,7 +625,7 @@ function PilotCard({ pilot }: { pilot: (typeof PILOTS)[number] }) {
       <div className="relative h-32 overflow-hidden bg-[#161616]">
         <img
           src={pilot.image}
-          alt={`${pilot.car} at night`}
+          alt={pilot.car}
           className="h-full w-full object-cover opacity-80 grayscale transition duration-500 group-hover:scale-105 group-hover:opacity-100"
           loading="lazy"
         />
@@ -673,7 +667,7 @@ function PilotCard({ pilot }: { pilot: (typeof PILOTS)[number] }) {
         </div>
 
         <div className="mt-4 space-y-1.5 border-t border-[#E6E1DA] pt-3">
-          {["ID verified", "Vehicle checked", "Face verified"].map((tag) => (
+          {["Background checked", "ID verified", "Vehicle checked"].map((tag) => (
             <p
               key={tag}
               className="flex items-center gap-1.5 text-[9px] font-semibold uppercase tracking-wider text-[#6B6560]"
@@ -694,16 +688,16 @@ function Pilots() {
       <div className="mx-auto max-w-7xl px-5 md:px-8">
         <div className="flex flex-col gap-8 md:flex-row md:items-end md:justify-between">
           <div className="max-w-2xl">
-            <Eyebrow tone="dark">Proof, not promises</Eyebrow>
+            <Eyebrow tone="dark">For riders</Eyebrow>
             <h2 className="font-display text-[clamp(2.6rem,5.8vw,5.1rem)] uppercase leading-[0.9] tracking-[-0.04em]">
-              Verified
+              Verified,
               <br />
-              <span className="text-[#E1251B]">Founding Pilots.</span>
+              <span className="text-[#E1251B]">safe drivers.</span>
             </h2>
           </div>
           <p className="max-w-sm text-sm leading-relaxed text-white/55">
-            Every pilot is ID-checked, licence-checked and vehicle-checked before their first trip.
-            This is the profile card riders see.
+            Every driver is background-checked. Real-time trip tracking and in-app SOS so you
+            always feel secure.
           </p>
         </div>
 
@@ -714,9 +708,9 @@ function Pilots() {
         </div>
 
         <div className="mt-6 flex flex-col gap-3 border border-white/10 px-4 py-3 text-[9px] font-semibold uppercase tracking-[0.14em] text-white/35 sm:flex-row sm:items-center sm:justify-between">
-          <span>Illustrative profile layout · live pilot identities are protected</span>
+          <span>Illustrative profile layout · live driver identities are protected</span>
           <span className="flex items-center gap-1.5 text-[#E1251B]">
-            <BadgeCheck className="h-3.5 w-3.5" /> Every live pilot passes the same checks
+            <BadgeCheck className="h-3.5 w-3.5" /> Every live driver passes the same checks
           </span>
         </div>
       </div>
@@ -730,17 +724,17 @@ function Fares() {
       <div className="mx-auto max-w-7xl px-5 md:px-8">
         <div className="grid gap-12 lg:grid-cols-[0.95fr_1.05fr] lg:items-center">
           <div>
-            <Eyebrow>The split</Eyebrow>
+            <Eyebrow>For drivers</Eyebrow>
             <h2 className="font-display text-[clamp(2.7rem,5.8vw,5.2rem)] uppercase leading-[0.88] tracking-[-0.045em] text-[#0B0B0C]">
               R5 max.
               <br />
-              Not 25%.
+              Sometimes R0.
             </h2>
             <p className="mt-6 max-w-md text-sm leading-relaxed text-[#6B6560] md:text-base">
-              Other platforms take a growing cut of everything you earn. Vura&apos;s commission is
-              10% of the fare, capped at R5. On a R200 trip, the pilot keeps R195. The rider pays a
-              4% booking fee on top — it never comes out of the pilot&apos;s fare. The more you
-              drive, the more you keep.
+              Other platforms take a growing cut of everything you earn. Vura caps it at R5 per
+              trip — and on some trips, we take nothing at all. On a R200 trip, the driver keeps
+              R195. The rider pays a 4% booking fee on top, so it never comes out of the
+              driver&apos;s fare. The more you drive, the more you keep.
             </p>
             <div className="mt-7 flex flex-wrap gap-x-6 gap-y-3 text-[9px] font-bold uppercase tracking-[0.16em] text-[#8A837D]">
               <span className="flex items-center gap-1.5">
@@ -783,12 +777,12 @@ function Fares() {
                 <div className="h-2 bg-[#E1251B]" style={{ width: "97.5%" }} />
               </div>
               <p className="mt-3 text-[10px] leading-relaxed text-[#8A837D]">
-                On a R40 trip, the pilot keeps R36 and Vura takes R4. The cap only matters when 10%
+                On a R40 trip, the driver keeps R36 and Vura takes R4. The cap only matters when 10%
                 would be more than R5.
               </p>
               <p className="mt-2 text-[10px] leading-relaxed text-[#8A837D]">
-                On a R500 trip, the pilot keeps R495. When Vura runs R0-commission promotions, the
-                pilot keeps every rand.
+                On a R500 trip, the driver keeps R495. When Vura runs R0-commission promotions, the
+                driver keeps every rand.
               </p>
             </div>
 
@@ -851,7 +845,7 @@ function Safety() {
       <div className="absolute inset-y-0 right-0 hidden w-[38%] opacity-25 lg:block">
         <img
           src={IMG.drive}
-          alt="Driver at the wheel at night"
+          alt="Driver at the wheel"
           className="h-full w-full object-cover"
           loading="lazy"
         />
@@ -860,50 +854,48 @@ function Safety() {
 
       <div className="relative mx-auto max-w-7xl px-5 md:px-8">
         <div className="max-w-3xl">
-          <Eyebrow tone="dark">After dark mode</Eyebrow>
+          <Eyebrow tone="dark">Safety first</Eyebrow>
           <h2 className="font-display text-[clamp(2.6rem,5.8vw,5.1rem)] uppercase leading-[0.9] tracking-[-0.04em]">
-            The safety net,
+            Your safety is
             <br />
-            <span className="text-[#E1251B]">not the sales pitch.</span>
+            <span className="text-[#E1251B]">non-negotiable.</span>
           </h2>
           <p className="mt-6 max-w-xl text-sm leading-relaxed text-white/55 md:text-base">
-            Every ride is protected, from the moment you book to the moment you arrive. Every trip
-            carries a start PIN, live tracking, trip sharing and an SOS that reaches your people and
-            our on-call team. Riders and drivers rate every trip, so standards stay high for
-            everyone. The safety features are in the app, not buried in a press release.
+            Every ride is protected, from the moment you book to the moment you arrive. Riders and
+            drivers rate every trip, so standards stay high for everyone.
           </p>
         </div>
 
         <div className="mt-12 grid gap-4 sm:grid-cols-2 lg:max-w-4xl lg:grid-cols-3">
           <Feature
-            icon={LockKeyhole}
-            title="Start PIN"
-            text="The trip cannot start until the rider's PIN is entered. The right car, the right trip."
+            icon={ShieldCheck}
+            title="Background-checked drivers"
+            text="Every driver is vetted and verified before their first trip. No exceptions."
           />
           <Feature
-            icon={Share2}
-            title="Live trip share"
-            text="Send a live link to someone you trust. They see the route, the car and the pilot."
+            icon={MapPin}
+            title="Real-time trip tracking"
+            text="Every ride is tracked from pickup to drop-off, so you always know where you are."
           />
           <Feature
             icon={Siren}
-            title="SOS to your people"
+            title="In-app SOS"
             text="One tap emails your emergency contacts and the Vura on-call inbox with your live location."
           />
           <Feature
-            icon={RouteIcon}
-            title="RideCheck"
-            text="If a trip stops responding, Vura checks in and escalates to the on-call team."
-          />
-          <Feature
-            icon={Fingerprint}
-            title="Verified pilots"
-            text="ID, licence and vehicle checks before the first trip. No unchecked cars."
+            icon={Share2}
+            title="Share your trip"
+            text="Loved ones can follow your ride live from start to finish."
           />
           <Feature
             icon={Headphones}
             title="24/7 human support"
-            text="Real people on call around the clock — report an issue, appeal a decision or reach the team without leaving the app."
+            text="Real people on call around the clock — whenever you need them."
+          />
+          <Feature
+            icon={Star}
+            title="Ratings that matter"
+            text="Riders and drivers rate every trip, keeping standards high for everyone."
           />
         </div>
 
@@ -924,24 +916,25 @@ function Drivers() {
           <div>
             <Eyebrow>For drivers</Eyebrow>
             <h2 className="font-display text-[clamp(2.7rem,5.8vw,5.2rem)] uppercase leading-[0.88] tracking-[-0.045em] text-[#0B0B0C]">
-              Stop paying
+              Keep what
               <br />
-              25% to be
+              you
               <br />
-              <span className="text-[#E1251B]">a number.</span>
+              <span className="text-[#E1251B]">earn.</span>
             </h2>
             <p className="mt-6 max-w-lg text-sm leading-relaxed text-[#6B6560] md:text-base">
-              Vura pilots keep the fare minus a commission capped at R5. See the split before you
-              accept, get a receipt that shows the maths, and build a rating that means something.
+              Every other platform takes a percentage cut that grows as you do. Vura caps it at R5
+              per trip — and on some trips, we take nothing at all. The more you drive, the more you
+              keep.
             </p>
             <div className="mt-7 grid gap-2 sm:grid-cols-2">
               {[
                 { icon: ShieldCheck, label: "R5 max commission" },
                 { icon: CreditCard, label: "See your net before you accept" },
-                { icon: BadgeCheck, label: "Founding Pilot badge" },
+                { icon: BadgeCheck, label: "Founding Driver badge" },
                 { icon: Clock3, label: "Request a payout from the app" },
                 { icon: Star, label: "A rating that means something" },
-                { icon: Headphones, label: "Priority pilot support" },
+                { icon: Headphones, label: "Priority driver support" },
               ].map((item) => (
                 <div
                   key={item.label}
@@ -958,11 +951,11 @@ function Drivers() {
               to="/contact"
               className="mt-8 inline-flex h-12 items-center gap-2 rounded-full bg-[#E1251B] px-6 text-[11px] font-black uppercase tracking-[0.14em] text-white transition hover:bg-[#0B0B0C]"
             >
-              Apply as a Founding Pilot <ArrowUpRight className="h-4 w-4" />
+              Apply as a Founding Driver <ArrowUpRight className="h-4 w-4" />
             </Link>
             <p className="mt-5 max-w-xl text-[9px] font-semibold uppercase leading-relaxed tracking-[0.14em] text-[#8A837D]">
-              Founding Pilot applications are open in Johannesburg. Approval depends on documents,
-              vehicle checks and the pilot code. Payouts are requested from the driver app.
+              Founding Driver applications are open in Johannesburg. Approval depends on documents,
+              vehicle checks and the driver code. Payouts are requested from the driver app.
             </p>
           </div>
 
@@ -970,16 +963,16 @@ function Drivers() {
             <div className="relative h-[420px] overflow-hidden bg-[#0B0B0C] md:h-[520px]">
               <img
                 src={IMG.blackCar}
-                alt="Black Vura car at night"
+                alt="A Vura car"
                 className="absolute inset-0 h-full w-full object-cover"
                 loading="lazy"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-[#0B0B0C] via-transparent to-transparent" />
               <div className="absolute left-5 top-5 bg-white px-3 py-2">
                 <p className="text-[8px] font-black uppercase tracking-[0.2em] text-[#8A837D]">
-                  The driver rebellion
+                  For drivers
                 </p>
-                <p className="mt-1 text-[12px] font-bold text-[#0B0B0C]">Keep the night's earnings.</p>
+                <p className="mt-1 text-[12px] font-bold text-[#0B0B0C]">Keep what you earn.</p>
               </div>
               <div className="absolute bottom-5 right-5 bg-[#E1251B] px-4 py-3 text-white">
                 <p className="text-[8px] font-black uppercase tracking-[0.18em] text-white/70">
@@ -1004,7 +997,7 @@ function FinalCta() {
     <section id="access" className="relative overflow-hidden bg-[#0B0B0C] py-20 text-white md:py-28">
       <img
         src={IMG.skyline}
-        alt="Johannesburg skyline at night"
+        alt="Johannesburg skyline"
         className="absolute inset-0 h-full w-full object-cover opacity-50"
         loading="lazy"
       />
@@ -1012,32 +1005,32 @@ function FinalCta() {
 
       <div className="relative mx-auto max-w-5xl px-5 text-center md:px-8">
         <p className="text-[10px] font-bold uppercase tracking-[0.3em] text-[#E1251B]">
-          Move without limits · Johannesburg
+          Vura · Johannesburg · South Africa
         </p>
         <h2 className="font-display mt-5 text-[clamp(3.1rem,8.5vw,7.6rem)] uppercase leading-[0.82] tracking-[-0.05em]">
-          The city
+          Move without
           <br />
-          is <span className="text-[#E1251B]">waiting.</span>
+          <span className="text-[#E1251B]">limits.</span>
         </h2>
         <p className="mx-auto mt-6 max-w-md text-sm leading-relaxed text-white/55">
-          Get early access to Vura in Johannesburg, or apply to drive the night shift.
+          Vura is live in Johannesburg. Get the app to ride, or apply to drive with Vura.
         </p>
         <div className="mt-8 flex flex-wrap items-center justify-center gap-3">
           <Link
-            to="/contact"
+            to="/get-the-app"
             className="inline-flex h-12 items-center gap-2 rounded-full bg-[#E1251B] px-6 text-[11px] font-black uppercase tracking-[0.14em] text-white transition hover:bg-white hover:text-[#0B0B0C]"
           >
-            Get early access <ArrowRight className="h-4 w-4" />
+            Get the app <ArrowRight className="h-4 w-4" />
           </Link>
           <Link
             to="/contact"
             className="inline-flex h-12 items-center gap-2 rounded-full border border-white/25 px-6 text-[11px] font-black uppercase tracking-[0.14em] text-white transition hover:border-[#E1251B] hover:text-[#E1251B]"
           >
-            Become a Founding Pilot <ArrowUpRight className="h-4 w-4" />
+            Become a driver <ArrowUpRight className="h-4 w-4" />
           </Link>
         </div>
         <p className="mt-6 text-[9px] font-semibold uppercase tracking-[0.16em] text-white/30">
-          iOS coming soon · Pay Later is Android-only
+          Rider and driver apps for Android · iPhone apps coming soon
         </p>
       </div>
     </section>
@@ -1052,28 +1045,29 @@ function Footer() {
           <div>
             <VuraLogo size={28} />
             <p className="mt-4 max-w-xs text-[11px] leading-relaxed text-white/45">
-              Ride the night. Vura is a ride-hailing platform built in Johannesburg, South Africa.
+              Rides that work for everyone. Vura is a ride-hailing platform built in Johannesburg,
+              South Africa.
             </p>
             <p className="mt-4 flex items-center gap-2 text-[10px] font-semibold uppercase tracking-[0.14em] text-white/35">
               <span className="vura-pulse h-1.5 w-1.5 rounded-full bg-[#E1251B]" />
-              After dark, every night
+              Riders and drivers, every day
             </p>
           </div>
 
           <div>
             <p className="text-[9px] font-black uppercase tracking-[0.2em] text-white/30">Explore</p>
             <div className="mt-4 flex flex-col gap-2.5 text-[11px] font-semibold text-white/60">
-              <a href="#night" className="transition hover:text-[#E1251B]">
-                The Night Shift
+              <a href="#manifesto" className="transition hover:text-[#E1251B]">
+                Our philosophy
               </a>
               <a href="#how" className="transition hover:text-[#E1251B]">
                 How it works
               </a>
-              <a href="#pilots" className="transition hover:text-[#E1251B]">
-                Founding Pilots
+              <a href="#riders" className="transition hover:text-[#E1251B]">
+                For riders and drivers
               </a>
-              <a href="#fares" className="transition hover:text-[#E1251B]">
-                Fares & Pay Later
+              <a href="#pay-later" className="transition hover:text-[#E1251B]">
+                Pay Later & fares
               </a>
               <a href="#safety" className="transition hover:text-[#E1251B]">
                 Safety
@@ -1103,7 +1097,7 @@ function Footer() {
             <p className="text-[9px] font-black uppercase tracking-[0.2em] text-white/30">Drivers</p>
             <div className="mt-4 flex flex-col gap-2.5 text-[11px] font-semibold text-white/60">
               <Link to="/contact" className="transition hover:text-[#E1251B]">
-                Apply as a pilot
+                Apply as a driver
               </Link>
               <Link to="/contact" className="transition hover:text-[#E1251B]">
                 Driver support
@@ -1122,7 +1116,7 @@ function Footer() {
           <p>© {new Date().getFullYear()} Dorfnew (Pty) Ltd. All rights reserved.</p>
           <p className="max-w-xl sm:text-right">
             Pay Later is an Android-only credit feature. Eligibility and terms apply. SOS alerts are
-            email-based and do not automatically contact emergency services. Johannesburg night
+            email-based and do not automatically contact emergency services. Johannesburg
             photography by Nico Roets / South African Tourism (CC BY 2.0). Stock photography via
             Pexels. Map data © OpenStreetMap contributors.
           </p>
@@ -1136,10 +1130,10 @@ function LandingPage() {
   return (
     <div className="min-h-screen bg-white text-[#0B0B0C] selection:bg-[#E1251B] selection:text-white">
       <SiteHeader />
-      <Hero />
       <Manifesto />
+      <Hero />
       <Ticker />
-      <NightShift />
+      <Everyone />
       <HowItWorks />
       <PayLaterBand />
       <Pilots />

@@ -73,7 +73,7 @@ function AuthPage() {
         <div className="relative hidden overflow-hidden bg-[#0B0B0C] lg:block">
           <img
             src="/images/joburg-night.jpg"
-            alt="Johannesburg at night"
+            alt="Johannesburg"
             className="absolute inset-0 h-full w-full object-cover opacity-80"
           />
           <div className="absolute inset-0 bg-gradient-to-t from-[#0B0B0C] via-[#0B0B0C]/40 to-[#0B0B0C]/20" />
@@ -85,22 +85,22 @@ function AuthPage() {
             <div>
               <p className="flex items-center gap-2 text-[10px] font-bold uppercase tracking-[0.24em] text-[#E1251B]">
                 <span className="h-1.5 w-1.5 rounded-full bg-[#E1251B]" />
-                Vura / Johannesburg / After dark
+                Vura / Johannesburg / South Africa
               </p>
               <h1 className="font-display mt-4 text-[clamp(3rem,5vw,5.5rem)] uppercase leading-[0.84] tracking-[-0.05em] text-white">
-                Your night
+                Rides that
                 <br />
-                is not
+                work for
                 <br />
-                <span className="text-[#E1251B]">over.</span>
+                <span className="text-[#E1251B]">everyone.</span>
               </h1>
               <p className="mt-5 max-w-sm text-sm leading-relaxed text-white/60">
-                Verified pilots. Instant dispatch. Zero surge surprises at 2 AM. Sign in to book,
+                Safe, affordable rides for passengers. Fair earnings for drivers. Sign in to book,
                 track and pay for your next ride.
               </p>
               <div className="mt-6 flex flex-wrap gap-4 text-[9px] font-bold uppercase tracking-[0.16em] text-white/40">
                 <span className="flex items-center gap-1.5">
-                  <ShieldCheck className="h-3.5 w-3.5 text-[#E1251B]" /> Verified pilots
+                  <ShieldCheck className="h-3.5 w-3.5 text-[#E1251B]" /> Verified drivers
                 </span>
                 <span className="flex items-center gap-1.5">
                   <CreditCard className="h-3.5 w-3.5 text-[#E1251B]" /> Pay Later on Android

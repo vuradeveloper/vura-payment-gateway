@@ -100,7 +100,7 @@ const ORG_SCHEMA = {
       },
       image: "https://www.ridevura.com/og-image.png",
       description:
-        "Vura is a Johannesburg ride-hailing app with verified pilots, a commission capped at R5 and Pay Later for riders.",
+        "Vura is a Johannesburg ride-hailing app with verified drivers, a commission capped at R5 and Pay Later for riders.",
       email: "info@ridevura.com",
       areaServed: { "@type": "City", name: "Johannesburg" },
       address: {
@@ -127,7 +127,7 @@ const ORG_SCHEMA = {
       offers: {
         "@type": "Offer",
         description:
-          "Verified pilots, commission capped at R5 per ride, no surge, and Ride Now Pay Later.",
+          "Verified drivers, commission capped at R5 per ride, no surge, and Ride Now Pay Later.",
         priceCurrency: "ZAR",
       },
     },
@@ -139,11 +139,11 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "Vura — Johannesburg ride-hailing" },
+      { title: "Vura — Rides that work for everyone. Johannesburg ride-hailing." },
       {
         name: "description",
         content:
-          "Vura is ride-hailing built for Johannesburg after dark: verified pilots, commission capped at R5, no surge and Ride Now Pay Later.",
+          "Vura is the e-hailing app South Africa has been waiting for — safe, affordable rides for passengers, and fair earnings for drivers. R5 max commission. Ride now, pay later.",
       },
       { name: "robots", content: "index, follow, max-image-preview:large, max-snippet:-1" },
       { name: "theme-color", content: "#E1251B" },
@@ -152,21 +152,22 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { property: "og:type", content: "website" },
       { property: "og:locale", content: "en_ZA" },
       { property: "og:url", content: "https://www.ridevura.com/" },
-      { property: "og:title", content: "Vura — Johannesburg ride-hailing" },
+      { property: "og:title", content: "Vura — Rides that work for everyone." },
       {
         property: "og:description",
         content:
-          "Verified pilots. Commission capped at R5. No surge. Ride Now Pay Later. Built for Johannesburg after dark.",
+          "Safe, affordable rides for passengers. Fair earnings for drivers. Commission capped at R5. Ride Now Pay Later.",
       },
       { property: "og:image", content: "https://www.ridevura.com/og-image.png" },
       { property: "og:image:width", content: "1200" },
       { property: "og:image:height", content: "630" },
       { property: "og:image:alt", content: "Vura — ride-hailing Johannesburg" },
       { name: "twitter:card", content: "summary_large_image" },
-      { name: "twitter:title", content: "Vura — Johannesburg ride-hailing" },
+      { name: "twitter:title", content: "Vura — Rides that work for everyone." },
       {
         name: "twitter:description",
-        content: "Verified pilots. Commission capped at R5. No surge. Ride Now Pay Later.",
+        content:
+          "Safe, affordable rides for passengers. Fair earnings for drivers. Commission capped at R5.",
       },
       { name: "twitter:image", content: "https://www.ridevura.com/og-image.png" },
     ],
