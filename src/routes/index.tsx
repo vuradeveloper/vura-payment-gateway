@@ -4,6 +4,7 @@ import {
   ArrowRight,
   ArrowUpRight,
   BadgeCheck,
+  CalendarClock,
   Check,
   Clock3,
   CreditCard,
@@ -18,7 +19,9 @@ import {
   Share2,
   ShieldCheck,
   Siren,
+  Smartphone,
   Star,
+  Wallet,
   Zap,
 } from "lucide-react";
 
@@ -289,6 +292,109 @@ function Hero() {
   );
 }
 
+function Manifesto() {
+  return (
+    <section
+      id="manifesto"
+      className="relative overflow-hidden border-y border-white/10 bg-[#0B0B0C] py-16 text-white md:py-24"
+    >
+      <div className="mx-auto grid max-w-7xl gap-12 px-5 md:px-8 lg:grid-cols-[0.95fr_1.05fr] lg:items-center">
+        <div>
+          <Eyebrow tone="dark">Our philosophy</Eyebrow>
+          <h2 className="font-display text-[clamp(2.8rem,6.4vw,5.6rem)] uppercase leading-[0.86] tracking-[-0.045em]">
+            Defy the
+            <br />
+            <span className="text-[#E1251B]">odds.</span>
+          </h2>
+          <p className="mt-5 text-xl font-semibold tracking-tight text-white/80 md:text-2xl">
+            Impossible is just a word.
+          </p>
+          <p className="mt-5 max-w-lg text-sm leading-relaxed text-white/55 md:text-base">
+            Vura is the ride-hailing app built around you — safe, affordable, and fair to the people
+            behind the wheel. We built it by asking what riders and drivers actually need, ignoring
+            how it&apos;s always been done, and refusing to ship something that doesn&apos;t change
+            things. South Africa deserves a ride-hailing app that&apos;s genuinely on its side.
+          </p>
+        </div>
+
+        <figure className="border-l-2 border-[#E1251B] pl-6 md:pl-10">
+          <span aria-hidden className="font-display block text-6xl leading-[0.7] text-[#E1251B]">
+            &ldquo;
+          </span>
+          <blockquote className="mt-3 text-lg font-semibold italic leading-snug tracking-tight text-white/90 md:text-2xl">
+            Here&apos;s to the crazy ones. The misfits. The rebels. The troublemakers. The round pegs
+            in the square holes. The ones who{" "}
+            <span className="not-italic text-[#E1251B]">see things differently.</span>
+          </blockquote>
+          <figcaption className="mt-5 text-[10px] font-bold uppercase tracking-[0.2em] text-white/35">
+            — Think Different, 1997
+          </figcaption>
+        </figure>
+      </div>
+    </section>
+  );
+}
+
+function HowItWorks() {
+  return (
+    <section id="how" className="border-b border-[#E6E1DA] bg-[#F8F6F2] py-20 md:py-28">
+      <div className="mx-auto max-w-7xl px-5 md:px-8">
+        <div className="grid gap-8 lg:grid-cols-[0.9fr_1.1fr] lg:items-end">
+          <div>
+            <Eyebrow>How it works</Eyebrow>
+            <h2 className="font-display text-[clamp(2.6rem,5.8vw,5.1rem)] uppercase leading-[0.9] tracking-[-0.04em] text-[#0B0B0C]">
+              On the road
+              <br />
+              in three steps.
+            </h2>
+          </div>
+          <p className="max-w-md text-sm leading-relaxed text-[#6B6560] md:text-base lg:pb-2">
+            From first tap to first trip: no paperwork, no waiting rooms, no hidden steps. Top up
+            with zero-fee Instant EFT or pay cash — Vura works however you do.
+          </p>
+        </div>
+
+        <div className="mt-12 grid gap-4 md:grid-cols-3">
+          {[
+            {
+              icon: Smartphone,
+              title: "Create an account",
+              text: "Sign up with email or Google in under a minute. No paperwork, no waiting.",
+            },
+            {
+              icon: Wallet,
+              title: "Top up your wallet",
+              text: "Add Vura cash instantly via Instant EFT — straight from your bank, zero fees.",
+            },
+            {
+              icon: MapPin,
+              title: "Book and ride",
+              text: "Enter your pickup and destination, choose your ride type, and go. Cash rides welcome too.",
+            },
+          ].map((step, i) => (
+            <div key={step.title} className="relative border border-[#E6E1DA] bg-white p-6">
+              <span className="font-display absolute right-4 top-2 text-5xl leading-none text-[#E6E1DA]">
+                {String(i + 1).padStart(2, "0")}
+              </span>
+              <div className="flex h-11 w-11 items-center justify-center bg-[#F8F6F2]">
+                <step.icon className="h-5 w-5 text-[#E1251B]" />
+              </div>
+              <h3 className="mt-5 text-[13px] font-black uppercase tracking-[0.08em] text-[#0B0B0C]">
+                {step.title}
+              </h3>
+              <p className="mt-2 text-[11px] leading-relaxed text-[#6B6560]">{step.text}</p>
+            </div>
+          ))}
+        </div>
+
+        <p className="mt-6 text-[9px] font-semibold uppercase tracking-[0.16em] text-[#8A837D]">
+          Cash rides welcome · Instant EFT top-ups · No surge
+        </p>
+      </div>
+    </section>
+  );
+}
+
 function PayLaterBand() {
   return (
     <section id="pay-later" className="relative overflow-hidden bg-[#E1251B] text-white">
@@ -306,7 +412,8 @@ function PayLaterBand() {
             </h2>
             <p className="mt-4 max-w-xl text-sm leading-relaxed text-white/75 md:text-base">
               Split the month, not your night. Eligible riders can settle at month-end with 0%
-              interest and no late fee. Your rides, your money, your timing.
+              interest and no late fee. Your money, your rules — flexibility no other app in South
+              Africa gives you.
             </p>
           </div>
 
@@ -325,6 +432,39 @@ function PayLaterBand() {
               </div>
             ))}
           </div>
+        </div>
+
+        <div className="mt-8 grid gap-3 border-t border-white/20 pt-6 sm:grid-cols-2 lg:grid-cols-4">
+          {[
+            {
+              icon: CreditCard,
+              title: "Ride now, pay later",
+              text: "Take 5 rides with Vura and you qualify. Then ride now and settle at month-end. No interest, no fee, no late fee.",
+            },
+            {
+              icon: CalendarClock,
+              title: "Monthly billing",
+              text: "Rides build up and bill once a month at month-end, when you get paid.",
+            },
+            {
+              icon: Percent,
+              title: "0% interest, always",
+              text: "Pay your balance on pay day and interest stays at exactly zero. Always. No catches.",
+            },
+            {
+              icon: Zap,
+              title: "Top up your wallet",
+              text: "Top up with zero-fee Instant EFT to stand a chance of discounts and free rides.",
+            },
+          ].map((item) => (
+            <div key={item.title} className="border border-white/15 bg-white/[0.06] p-4">
+              <item.icon className="h-4 w-4 text-white" />
+              <h3 className="mt-3 text-[10px] font-black uppercase tracking-[0.08em] text-white">
+                {item.title}
+              </h3>
+              <p className="mt-2 text-[10px] leading-relaxed text-white/70">{item.text}</p>
+            </div>
+          ))}
         </div>
 
         <div className="mt-7 flex flex-wrap items-center gap-x-6 gap-y-3 border-t border-white/20 pt-5">
@@ -599,7 +739,8 @@ function Fares() {
             <p className="mt-6 max-w-md text-sm leading-relaxed text-[#6B6560] md:text-base">
               Other platforms take a growing cut of everything you earn. Vura&apos;s commission is
               10% of the fare, capped at R5. On a R200 trip, the pilot keeps R195. The rider pays a
-              4% booking fee on top — it never comes out of the pilot&apos;s fare.
+              4% booking fee on top — it never comes out of the pilot&apos;s fare. The more you
+              drive, the more you keep.
             </p>
             <div className="mt-7 flex flex-wrap gap-x-6 gap-y-3 text-[9px] font-bold uppercase tracking-[0.16em] text-[#8A837D]">
               <span className="flex items-center gap-1.5">
@@ -644,6 +785,10 @@ function Fares() {
               <p className="mt-3 text-[10px] leading-relaxed text-[#8A837D]">
                 On a R40 trip, the pilot keeps R36 and Vura takes R4. The cap only matters when 10%
                 would be more than R5.
+              </p>
+              <p className="mt-2 text-[10px] leading-relaxed text-[#8A837D]">
+                On a R500 trip, the pilot keeps R495. When Vura runs R0-commission promotions, the
+                pilot keeps every rand.
               </p>
             </div>
 
@@ -722,9 +867,10 @@ function Safety() {
             <span className="text-[#E1251B]">not the sales pitch.</span>
           </h2>
           <p className="mt-6 max-w-xl text-sm leading-relaxed text-white/55 md:text-base">
-            Every trip carries a start PIN, live tracking, trip sharing and an SOS that reaches your
-            people and our on-call team. The safety features are in the app, not buried in a press
-            release.
+            Every ride is protected, from the moment you book to the moment you arrive. Every trip
+            carries a start PIN, live tracking, trip sharing and an SOS that reaches your people and
+            our on-call team. Riders and drivers rate every trip, so standards stay high for
+            everyone. The safety features are in the app, not buried in a press release.
           </p>
         </div>
 
@@ -756,8 +902,8 @@ function Safety() {
           />
           <Feature
             icon={Headphones}
-            title="In-app support"
-            text="Report an issue, appeal a decision or reach the team without leaving the app."
+            title="24/7 human support"
+            text="Real people on call around the clock — report an issue, appeal a decision or reach the team without leaving the app."
           />
         </div>
 
@@ -841,7 +987,7 @@ function Drivers() {
                 </p>
                 <p className="font-display text-4xl leading-none">R5</p>
                 <p className="mt-1 text-[8px] font-bold uppercase tracking-[0.14em] text-white/70">
-                  max · from the fare
+                  max · sometimes R0
                 </p>
               </div>
             </div>
@@ -866,7 +1012,7 @@ function FinalCta() {
 
       <div className="relative mx-auto max-w-5xl px-5 text-center md:px-8">
         <p className="text-[10px] font-bold uppercase tracking-[0.3em] text-[#E1251B]">
-          Johannesburg · Founding access
+          Move without limits · Johannesburg
         </p>
         <h2 className="font-display mt-5 text-[clamp(3.1rem,8.5vw,7.6rem)] uppercase leading-[0.82] tracking-[-0.05em]">
           The city
@@ -919,6 +1065,9 @@ function Footer() {
             <div className="mt-4 flex flex-col gap-2.5 text-[11px] font-semibold text-white/60">
               <a href="#night" className="transition hover:text-[#E1251B]">
                 The Night Shift
+              </a>
+              <a href="#how" className="transition hover:text-[#E1251B]">
+                How it works
               </a>
               <a href="#pilots" className="transition hover:text-[#E1251B]">
                 Founding Pilots
@@ -988,8 +1137,10 @@ function LandingPage() {
     <div className="min-h-screen bg-white text-[#0B0B0C] selection:bg-[#E1251B] selection:text-white">
       <SiteHeader />
       <Hero />
+      <Manifesto />
       <Ticker />
       <NightShift />
+      <HowItWorks />
       <PayLaterBand />
       <Pilots />
       <Fares />
