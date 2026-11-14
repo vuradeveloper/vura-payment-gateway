@@ -192,12 +192,19 @@ function Hero() {
             <span className="text-[#E1251B]">odds.</span>
           </h1>
 
-          <p className="mt-7 max-w-xl text-xl font-semibold leading-snug tracking-tight text-[#0B0B0C] md:text-2xl">
-            Safe, affordable rides for passengers. Fair earnings for drivers.
+          <blockquote className="mt-7 max-w-xl text-base font-semibold italic leading-snug tracking-tight text-[#0B0B0C] md:text-lg">
+            &ldquo;Here&apos;s to the crazy ones. The misfits. The rebels. The troublemakers. The
+            round pegs in the square holes. The ones who{" "}
+            <span className="not-italic text-[#E1251B]">see things differently.</span>&rdquo;
+          </blockquote>
+          <p className="mt-2 text-[9px] font-bold uppercase tracking-[0.16em] text-[#8A837D]">
+            — Think Different, 1997
           </p>
-          <p className="mt-3 max-w-lg text-sm leading-relaxed text-[#6B6560] md:text-base">
-            Vura is the e-hailing app South Africa has been waiting for. Built differently, on
-            purpose.
+          <p className="mt-3 max-w-lg text-xs leading-relaxed text-[#6B6560] md:text-sm">
+            We built Vura the way Apple once built computers — by asking what the world actually
+            needs, ignoring how it&apos;s always been done, and refusing to ship something that
+            doesn&apos;t change things. South Africa deserves a ride-hailing app that&apos;s
+            genuinely on its side.
           </p>
 
           <div className="mt-8 flex flex-wrap items-center gap-3">
@@ -301,19 +308,12 @@ function Hero() {
             </p>
           </div>
           <div className="border-l-2 border-[#E1251B] pl-5">
-            <blockquote className="text-sm font-semibold italic leading-snug tracking-tight text-[#0B0B0C] md:text-base">
-              &ldquo;Here&apos;s to the crazy ones. The misfits. The rebels. The troublemakers. The
-              round pegs in the square holes. The ones who{" "}
-              <span className="not-italic text-[#E1251B]">see things differently.</span>&rdquo;
-            </blockquote>
-            <p className="mt-2 text-[9px] font-bold uppercase tracking-[0.16em] text-[#8A837D]">
-              — Think Different, 1997
+            <p className="text-sm font-semibold leading-snug tracking-tight text-[#0B0B0C] md:text-base">
+              Safe, affordable rides for passengers. Fair earnings for drivers.
             </p>
-            <p className="mt-3 max-w-xl text-[11px] leading-relaxed text-[#6B6560]">
-              We built Vura the way Apple once built computers — by asking what the world actually
-              needs, ignoring how it&apos;s always been done, and refusing to ship something that
-              doesn&apos;t change things. South Africa deserves a ride-hailing app that&apos;s
-              genuinely on its side.
+            <p className="mt-2 max-w-xl text-[11px] leading-relaxed text-[#6B6560]">
+              Vura is the e-hailing app South Africa has been waiting for. Built differently, on
+              purpose.
             </p>
           </div>
         </div>
