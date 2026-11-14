@@ -10,7 +10,6 @@ import {
   CreditCard,
   Headphones,
   MapPin,
-  HeartHandshake,
   Percent,
   Share2,
   ShieldCheck,
@@ -505,114 +504,6 @@ function Ticker() {
   );
 }
 
-function Everyone() {
-  return (
-    <section id="riders" className="border-b border-[#E6E1DA] bg-white py-20 md:py-28">
-      <div className="mx-auto max-w-7xl px-5 md:px-8">
-        <div className="grid gap-10 lg:grid-cols-[0.92fr_1.08fr] lg:items-end">
-          <div>
-            <Eyebrow>For riders and drivers</Eyebrow>
-            <h2 className="font-display text-[clamp(2.6rem,5.8vw,5.1rem)] uppercase leading-[0.9] tracking-[-0.04em] text-[#0B0B0C]">
-              One app.
-              <br />
-              Both sides.
-              <br />
-              <span className="text-[#E1251B]">Better for everyone.</span>
-            </h2>
-          </div>
-          <p className="max-w-md text-sm leading-relaxed text-[#6B6560] md:text-base lg:pb-2">
-            Vura is the e-hailing app South Africa has been waiting for — safe, affordable rides
-            for passengers, and fair earnings for drivers. Built differently, on purpose.
-          </p>
-        </div>
-
-        <div className="mt-14 grid gap-4 lg:grid-cols-[1.05fr_0.95fr]">
-          <div className="grid grid-cols-2 gap-4">
-            <div className="relative col-span-2 h-[300px] overflow-hidden bg-[#0B0B0C] md:h-[360px]">
-              <img
-                src={IMG.club}
-                alt="A Vura ride in Johannesburg"
-                className="absolute inset-0 h-full w-full object-cover"
-                loading="lazy"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-[#0B0B0C] via-transparent to-transparent" />
-              <div className="absolute bottom-4 left-4">
-                <p className="text-[9px] font-black uppercase tracking-[0.2em] text-white/60">
-                  A Vura ride
-                </p>
-                <p className="mt-1 text-lg font-bold text-white">Rides that work for everyone.</p>
-              </div>
-            </div>
-
-            <div className="relative h-[190px] overflow-hidden bg-[#0B0B0C]">
-              <img
-                src={IMG.bridgeCar}
-                alt="A Vura driver waiting at pickup"
-                className="absolute inset-0 h-full w-full object-cover"
-                loading="lazy"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-[#0B0B0C] via-transparent to-transparent" />
-              <p className="absolute bottom-3 left-3 text-[9px] font-black uppercase tracking-[0.18em] text-white">
-                The pickup
-              </p>
-            </div>
-
-            <div className="relative h-[190px] overflow-hidden bg-[#0B0B0C]">
-              <img
-                src={IMG.drive}
-                alt="A Vura driver at the wheel"
-                className="absolute inset-0 h-full w-full object-cover"
-                loading="lazy"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-[#0B0B0C] via-transparent to-transparent" />
-              <p className="absolute bottom-3 left-3 text-[9px] font-black uppercase tracking-[0.18em] text-white">
-                The driver
-              </p>
-            </div>
-          </div>
-
-          <div className="flex flex-col justify-center gap-4">
-            {[
-              {
-                icon: Users,
-                title: "For riders",
-                text: "Safe, affordable rides you can count on. Instant EFT top-ups — top up straight from your South African bank account, no card, no hassle, zero fees.",
-              },
-              {
-                icon: Wallet,
-                title: "For drivers",
-                text: "Keep what you earn. A flat commission capped at R5 per trip — the more you make, the more you keep.",
-              },
-              {
-                icon: HeartHandshake,
-                title: "For everyone",
-                text: "One app that works for passengers and drivers, not one at the other's expense.",
-              },
-            ].map((card) => (
-              <div
-                key={card.title}
-                className="group border border-[#E6E1DA] bg-[#F8F6F2] p-5 transition hover:border-[#E1251B]/50 hover:bg-white"
-              >
-                <div className="flex items-start gap-4">
-                  <div className="flex h-10 w-10 shrink-0 items-center justify-center bg-white shadow-sm">
-                    <card.icon className="h-5 w-5 text-[#E1251B]" />
-                  </div>
-                  <div>
-                    <h3 className="text-[12px] font-black uppercase tracking-[0.08em] text-[#0B0B0C]">
-                      {card.title}
-                    </h3>
-                    <p className="mt-2 text-[11px] leading-relaxed text-[#6B6560]">{card.text}</p>
-                  </div>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </div>
-    </section>
-  );
-}
-
 function PilotCard({ pilot }: { pilot: (typeof PILOTS)[number] }) {
   return (
     <div className="group overflow-hidden border border-white/10 bg-white transition hover:-translate-y-1">
@@ -1067,9 +958,6 @@ function Footer() {
               <a href="#how" className="transition hover:text-[#E1251B]">
                 How it works
               </a>
-              <a href="#riders" className="transition hover:text-[#E1251B]">
-                For riders and drivers
-              </a>
               <a href="#pay-later" className="transition hover:text-[#E1251B]">
                 Pay Later & fares
               </a>
@@ -1138,7 +1026,6 @@ function LandingPage() {
       <Ticker />
       <PayLaterBand />
       <Fares />
-      <Everyone />
       <HowItWorks />
       <Pilots />
       <Safety />
