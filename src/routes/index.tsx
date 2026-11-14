@@ -11,11 +11,9 @@ import {
   Headphones,
   MapPin,
   Percent,
-  Share2,
   ShieldCheck,
   Siren,
   Smartphone,
-  Star,
   Users,
   Wallet,
   Zap,
@@ -35,33 +33,6 @@ export const Route = createFileRoute("/")({
   }),
   component: LandingPage,
 });
-
-const PILOTS = [
-  {
-    id: "DRIVER 014",
-    area: "Sandton",
-    car: "Toyota Corolla · White",
-    rating: "4.9",
-    trips: "1,240 trips",
-    image: "/images/car-17120616.jpg",
-  },
-  {
-    id: "DRIVER 027",
-    area: "Rosebank",
-    car: "VW Polo · Black",
-    rating: "4.8",
-    trips: "980 trips",
-    image: "/images/car-4713813.jpg",
-  },
-  {
-    id: "DRIVER 039",
-    area: "Braamfontein",
-    car: "Suzuki Swift · Silver",
-    rating: "5.0",
-    trips: "640 trips",
-    image: "/images/car-9572026.jpg",
-  },
-];
 
 const TICKER = [
   { area: "Sandton", time: "3 min" },
@@ -504,72 +475,9 @@ function Ticker() {
   );
 }
 
-function PilotCard({ pilot }: { pilot: (typeof PILOTS)[number] }) {
-  return (
-    <div className="group overflow-hidden border border-white/10 bg-white transition hover:-translate-y-1">
-      <div className="relative h-32 overflow-hidden bg-[#161616]">
-        <img
-          src={pilot.image}
-          alt={pilot.car}
-          className="h-full w-full object-cover opacity-80 grayscale transition duration-500 group-hover:scale-105 group-hover:opacity-100"
-          loading="lazy"
-        />
-        <div className="absolute inset-0 bg-gradient-to-t from-[#0B0B0C] via-transparent to-transparent" />
-        <div className="pointer-events-none absolute inset-0 bg-[#E1251B]/15 mix-blend-multiply" />
-        <span className="absolute right-3 top-3 border border-white/25 bg-[#0B0B0C]/70 px-1.5 py-0.5 text-[7px] font-bold uppercase tracking-[0.18em] text-white/65 backdrop-blur">
-          Profile preview
-        </span>
-        <span className="absolute bottom-3 left-3 flex items-center gap-1 bg-[#E1251B] px-2 py-1 text-[8px] font-black uppercase tracking-[0.16em] text-white">
-          <BadgeCheck className="h-3 w-3" /> Verified
-        </span>
-      </div>
-
-      <div className="p-5">
-        <div className="flex items-center gap-3">
-          <div className="flex h-11 w-11 items-center justify-center rounded-full bg-[#0B0B0C] text-[11px] font-black text-white">
-            {pilot.id.split(" ")[1]}
-          </div>
-          <div className="min-w-0">
-            <p className="text-[13px] font-black uppercase tracking-wide text-[#0B0B0C]">
-              {pilot.id}
-            </p>
-            <p className="mt-0.5 truncate text-[10px] font-medium text-[#8A837D]">
-              {pilot.area} · {pilot.car}
-            </p>
-          </div>
-        </div>
-
-        <div className="mt-5 flex items-end gap-2">
-          <p className="font-display text-3xl leading-none text-[#E1251B]">{pilot.rating}</p>
-          <div className="flex gap-0.5 pb-1">
-            {[0, 1, 2, 3, 4].map((i) => (
-              <Star key={i} className="h-2.5 w-2.5 fill-[#E1251B] text-[#E1251B]" />
-            ))}
-          </div>
-          <p className="pb-1 text-[9px] font-semibold uppercase tracking-wider text-[#8A837D]">
-            {pilot.trips}
-          </p>
-        </div>
-
-        <div className="mt-4 space-y-1.5 border-t border-[#E6E1DA] pt-3">
-          {["Background checked", "ID verified", "Vehicle checked"].map((tag) => (
-            <p
-              key={tag}
-              className="flex items-center gap-1.5 text-[9px] font-semibold uppercase tracking-wider text-[#6B6560]"
-            >
-              <Check className="h-3 w-3 text-[#E1251B]" />
-              {tag}
-            </p>
-          ))}
-        </div>
-      </div>
-    </div>
-  );
-}
-
 function Pilots() {
   return (
-    <section id="pilots" className="bg-[#0B0B0C] py-20 text-white md:py-28">
+    <section id="pilots" className="bg-[#0B0B0C] py-16 text-white md:py-20">
       <div className="mx-auto max-w-7xl px-5 md:px-8">
         <div className="flex flex-col gap-8 md:flex-row md:items-end md:justify-between">
           <div className="max-w-2xl">
@@ -581,22 +489,23 @@ function Pilots() {
             </h2>
           </div>
           <p className="max-w-sm text-sm leading-relaxed text-white/55">
-            Every driver is background-checked. Real-time trip tracking and in-app SOS so you
-            always feel secure.
+            Every driver is checked before their first trip. Track your ride and get help in the
+            app.
           </p>
         </div>
 
-        <div className="mt-12 grid gap-4 md:grid-cols-3">
-          {PILOTS.map((pilot) => (
-            <PilotCard key={pilot.id} pilot={pilot} />
+        <div className="mt-8 grid gap-3 sm:grid-cols-3">
+          {["Background checked", "ID verified", "Vehicle checked"].map((item) => (
+            <div
+              key={item}
+              className="flex items-center gap-3 border border-white/10 bg-white/[0.04] px-4 py-3"
+            >
+              <Check className="h-4 w-4 shrink-0 text-[#E1251B]" />
+              <span className="text-[10px] font-black uppercase tracking-[0.08em] text-white/80">
+                {item}
+              </span>
+            </div>
           ))}
-        </div>
-
-        <div className="mt-6 flex flex-col gap-3 border border-white/10 px-4 py-3 text-[9px] font-semibold uppercase tracking-[0.14em] text-white/35 sm:flex-row sm:items-center sm:justify-between">
-          <span>Illustrative profile layout · live driver identities are protected</span>
-          <span className="flex items-center gap-1.5 text-[#E1251B]">
-            <BadgeCheck className="h-3.5 w-3.5" /> Every live driver passes the same checks
-          </span>
         </div>
       </div>
     </section>
@@ -730,7 +639,10 @@ function Feature({
 
 function Safety() {
   return (
-    <section id="safety" className="relative overflow-hidden bg-[#0B0B0C] py-20 text-white md:py-28">
+    <section
+      id="safety"
+      className="relative overflow-hidden bg-[#0B0B0C] py-16 text-white md:py-20"
+    >
       <div className="absolute inset-y-0 right-0 hidden w-[38%] opacity-25 lg:block">
         <img
           src={IMG.drive}
@@ -749,42 +661,26 @@ function Safety() {
             <br />
             <span className="text-[#E1251B]">non-negotiable.</span>
           </h2>
-          <p className="mt-6 max-w-xl text-sm leading-relaxed text-white/55 md:text-base">
-            Every ride is protected, from the moment you book to the moment you arrive. Riders and
-            drivers rate every trip, so standards stay high for everyone.
+          <p className="mt-5 max-w-xl text-sm leading-relaxed text-white/55 md:text-base">
+            Every ride is protected, from booking to drop-off.
           </p>
         </div>
 
-        <div className="mt-12 grid gap-4 sm:grid-cols-2 lg:max-w-4xl lg:grid-cols-3">
+        <div className="mt-8 grid gap-4 sm:grid-cols-2 lg:max-w-4xl lg:grid-cols-3">
           <Feature
             icon={ShieldCheck}
             title="Background-checked drivers"
-            text="Every driver is vetted and verified before their first trip. No exceptions."
+            text="Every driver is vetted before their first trip."
           />
           <Feature
             icon={MapPin}
             title="Live trip tracking"
-            text="Watch your driver approach in real time. Share your trip with anyone you trust."
+            text="Track your ride and share it with someone you trust."
           />
           <Feature
             icon={Siren}
             title="In-app SOS"
-            text="One tap emails your emergency contacts and the Vura on-call inbox with your live location."
-          />
-          <Feature
-            icon={Share2}
-            title="Share your trip"
-            text="Loved ones can follow your ride live from start to finish."
-          />
-          <Feature
-            icon={Headphones}
-            title="In-app support"
-            text="Something went wrong? Reach a real person directly in the app. No hold music, no call centres."
-          />
-          <Feature
-            icon={Star}
-            title="Ratings that matter"
-            text="Riders and drivers rate every trip, keeping standards high for everyone."
+            text="One tap alerts your contacts and our on-call team."
           />
         </div>
 
