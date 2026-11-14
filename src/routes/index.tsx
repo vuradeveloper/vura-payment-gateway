@@ -1016,7 +1016,10 @@ function FinalCta() {
           <br />
           <span className="text-[#E1251B]">limits.</span>
         </h2>
-        <p className="mx-auto mt-6 max-w-md text-sm leading-relaxed text-white/55">
+        <p className="mx-auto mt-4 max-w-md text-[11px] font-bold uppercase tracking-[0.18em] text-white/60">
+          The city is waiting.
+        </p>
+        <p className="mx-auto mt-4 max-w-md text-sm leading-relaxed text-white/55">
           Vura is live in Johannesburg. Get the app to ride, or apply to drive with Vura.
         </p>
         <div className="mt-8 flex flex-wrap items-center justify-center gap-3">
