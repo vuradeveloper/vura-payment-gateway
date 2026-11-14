@@ -725,25 +725,22 @@ function Fares() {
               Sometimes R0.
             </h2>
             <p className="mt-6 max-w-md text-sm leading-relaxed text-[#6B6560] md:text-base">
-              Other platforms take a growing cut of everything you earn. Vura caps it at R5 per
-              trip — and on some trips, we take nothing at all. On a R200 trip, you keep R195. The
-              rider pays a 4% booking fee on top, so it never comes out of the driver&apos;s fare.
-              The more you drive, the more you keep.
+              Keep more of every trip. We take 10%, capped at R5. On a R200 trip, you keep R195. The
+              rider pays the 4% booking fee, not you.
             </p>
             <div className="mt-7 flex flex-wrap gap-x-6 gap-y-3 text-[9px] font-bold uppercase tracking-[0.16em] text-[#8A837D]">
               <span className="flex items-center gap-1.5">
                 <Percent className="h-3.5 w-3.5 text-[#E1251B]" /> 10% commission
               </span>
               <span className="flex items-center gap-1.5">
-                <ShieldCheck className="h-3.5 w-3.5 text-[#E1251B]" /> Truly affordable fares
+                <ShieldCheck className="h-3.5 w-3.5 text-[#E1251B]" /> R5 max per trip
               </span>
               <span className="flex items-center gap-1.5">
                 <Zap className="h-3.5 w-3.5 text-[#E1251B]" /> No surge
               </span>
             </div>
             <p className="mt-4 max-w-md text-[10px] leading-relaxed text-[#8A837D]">
-              Because our commission is capped at R5, drivers earn more and passengers pay less.
-              Everyone wins.
+              Drivers earn more. Riders pay less. Everyone wins.
             </p>
           </div>
 
@@ -778,15 +775,13 @@ function Fares() {
                 <div className="h-2 bg-[#E1251B]" style={{ width: "97.5%" }} />
               </div>
               <p className="mt-3 text-[10px] leading-relaxed text-[#8A837D]">
-                On a R40 trip, you keep R36 and Vura takes R4. The cap only matters when 10% would be
-                more than R5.
+                R40 trip: you keep R36.
               </p>
               <p className="mt-2 text-[10px] leading-relaxed text-[#8A837D]">
-                On a R500 trip, you keep R495. When Vura runs R0-commission promotions, you keep
-                every rand.
+                R500 trip: you keep R495.
               </p>
               <p className="mt-2 text-[10px] leading-relaxed text-[#8A837D]">
-                We grow when you grow — not by taking more from you.
+                We grow when you grow.
               </p>
             </div>
 
@@ -803,8 +798,7 @@ function Fares() {
                 freedom.
               </h3>
               <p className="mt-3 max-w-sm text-[12px] leading-relaxed text-white/75">
-                Ride now and settle at month-end. 0% interest. No late fee. Eligibility and terms
-                apply.
+                Ride now. Pay at month-end. 0% interest. No late fee.
               </p>
               <div className="mt-5 flex flex-wrap items-center gap-4">
                 <Link
