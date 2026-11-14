@@ -384,20 +384,23 @@ function HowItWorks() {
 
 function PayLaterBand() {
   return (
-    <section id="pay-later" className="relative overflow-hidden bg-[#E1251B] text-white">
+    <section
+      id="pay-later"
+      className="relative overflow-hidden border-b border-[#E6E1DA] bg-[#F8F6F2] text-[#0B0B0C]"
+    >
       <div className="mx-auto max-w-7xl px-5 py-12 md:px-8 md:py-16">
         <div className="grid gap-9 lg:grid-cols-[1.15fr_0.85fr] lg:items-center">
           <div>
-            <p className="mb-4 flex items-center gap-2.5 text-[10px] font-bold uppercase tracking-[0.26em] text-white/65">
-              <span className="h-1.5 w-1.5 rounded-full bg-white" />
+            <p className="mb-4 flex items-center gap-2.5 text-[10px] font-bold uppercase tracking-[0.26em] text-[#E1251B]">
+              <span className="h-1.5 w-1.5 rounded-full bg-[#E1251B]" />
               Ride Now, Pay Later · Android only
             </p>
-            <h2 className="font-display text-[clamp(2.7rem,5.6vw,4.9rem)] uppercase leading-[0.88] tracking-[-0.045em]">
+            <h2 className="font-display text-[clamp(2.7rem,5.6vw,4.9rem)] uppercase leading-[0.88] tracking-[-0.045em] text-[#0B0B0C]">
               Ride now.
               <br />
               Pay later.
             </h2>
-            <p className="mt-4 max-w-xl text-sm leading-relaxed text-white/75 md:text-base">
+            <p className="mt-4 max-w-xl text-sm leading-relaxed text-[#6B6560] md:text-base">
               Your money, your rules. Vura gives riders the flexibility no other app in South Africa
               does. Ride now and settle at month-end with 0% interest and no late fee.
             </p>
@@ -409,18 +412,18 @@ function PayLaterBand() {
               { n: "02", title: "Rack it up", text: "Your rides collect in one balance." },
               { n: "03", title: "Payday", text: "Settle at month-end. 0% interest." },
             ].map((step) => (
-              <div key={step.n} className="border border-white/20 bg-white/[0.06] p-3.5">
-                <p className="text-[8px] font-black tracking-[0.18em] text-white/60">{step.n}</p>
-                <p className="mt-2 text-[11px] font-black uppercase tracking-[0.06em] text-white">
+              <div key={step.n} className="border border-[#E6E1DA] bg-white p-3.5">
+                <p className="text-[8px] font-black tracking-[0.18em] text-[#8A837D]">{step.n}</p>
+                <p className="mt-2 text-[11px] font-black uppercase tracking-[0.06em] text-[#0B0B0C]">
                   {step.title}
                 </p>
-                <p className="mt-1.5 text-[9px] leading-relaxed text-white/75">{step.text}</p>
+                <p className="mt-1.5 text-[9px] leading-relaxed text-[#6B6560]">{step.text}</p>
               </div>
             ))}
           </div>
         </div>
 
-        <div className="mt-8 grid gap-3 border-t border-white/20 pt-6 sm:grid-cols-2 lg:grid-cols-4">
+        <div className="mt-8 grid gap-3 border-t border-[#E6E1DA] pt-6 sm:grid-cols-2 lg:grid-cols-4">
           {[
             {
               icon: CreditCard,
@@ -443,24 +446,24 @@ function PayLaterBand() {
               text: "Top up with zero-fee Instant EFT to stand a chance of discounts and free rides.",
             },
           ].map((item) => (
-            <div key={item.title} className="border border-white/15 bg-white/[0.06] p-4">
-              <item.icon className="h-4 w-4 text-white" />
-              <h3 className="mt-3 text-[10px] font-black uppercase tracking-[0.08em] text-white">
+            <div key={item.title} className="border border-[#E6E1DA] bg-white p-4">
+              <item.icon className="h-4 w-4 text-[#E1251B]" />
+              <h3 className="mt-3 text-[10px] font-black uppercase tracking-[0.08em] text-[#0B0B0C]">
                 {item.title}
               </h3>
-              <p className="mt-2 text-[10px] leading-relaxed text-white/70">{item.text}</p>
+              <p className="mt-2 text-[10px] leading-relaxed text-[#6B6560]">{item.text}</p>
             </div>
           ))}
         </div>
 
-        <div className="mt-7 flex flex-wrap items-center gap-x-6 gap-y-3 border-t border-white/20 pt-5">
+        <div className="mt-7 flex flex-wrap items-center gap-x-6 gap-y-3 border-t border-[#E6E1DA] pt-5">
           <Link
             to="/terms"
-            className="inline-flex items-center gap-1.5 text-[10px] font-black uppercase tracking-[0.14em] underline underline-offset-4"
+            className="inline-flex items-center gap-1.5 text-[10px] font-black uppercase tracking-[0.14em] text-[#0B0B0C] underline underline-offset-4 transition hover:text-[#E1251B]"
           >
             See how it works <ArrowUpRight className="h-3.5 w-3.5" />
           </Link>
-          <span className="text-[9px] font-semibold uppercase tracking-[0.14em] text-white/60">
+          <span className="text-[9px] font-semibold uppercase tracking-[0.14em] text-[#8A837D]">
             0% interest · No late fee · Eligibility and terms apply
           </span>
         </div>
@@ -1139,9 +1142,9 @@ function LandingPage() {
       <SiteHeader />
       <Hero />
       <Ticker />
+      <PayLaterBand />
       <Everyone />
       <HowItWorks />
-      <PayLaterBand />
       <Pilots />
       <Fares />
       <Safety />
