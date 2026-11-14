@@ -14,7 +14,6 @@ import {
   ShieldCheck,
   Siren,
   Smartphone,
-  Users,
   Wallet,
   Zap,
 } from "lucide-react";
@@ -190,18 +189,6 @@ function Hero() {
             >
               Become a driver <ArrowUpRight className="h-4 w-4" />
             </Link>
-          </div>
-
-          <div className="mt-8 flex flex-wrap items-center gap-x-5 gap-y-2 text-[9px] font-bold uppercase tracking-[0.16em] text-[#8A837D]">
-            <span className="flex items-center gap-1.5">
-              <ShieldCheck className="h-3.5 w-3.5 text-[#E1251B]" /> R5 max commission
-            </span>
-            <span className="flex items-center gap-1.5">
-              <CreditCard className="h-3.5 w-3.5 text-[#E1251B]" /> Pay Later on Android
-            </span>
-            <span className="flex items-center gap-1.5">
-              <Users className="h-3.5 w-3.5 text-[#E1251B]" /> For riders and drivers
-            </span>
           </div>
 
           <a
@@ -708,21 +695,17 @@ function Drivers() {
               <span className="text-[#E1251B]">earn.</span>
             </h2>
             <p className="mt-6 max-w-lg text-sm leading-relaxed text-[#6B6560] md:text-base">
-              Every other platform takes a percentage cut that grows as you do — punishing your
-              success. Vura does it differently. We charge a flat commission capped at R5 per trip,
-              no matter how much you earn. The more you make, the more you keep.
+              Keep more of every trip. We take 10%, capped at R5. The more you drive, the more you
+              keep.
             </p>
             <div className="mt-7 grid gap-2 sm:grid-cols-2">
               {[
-                { icon: ShieldCheck, label: "R5 maximum commission — never more, ever" },
-                {
-                  icon: CreditCard,
-                  label: "Transparent pricing — see exactly what you earn before you accept",
-                },
-                { icon: BadgeCheck, label: "No surprise deductions — your fare is your fare" },
-                { icon: Clock3, label: "Flexible hours — drive when it suits you" },
-                { icon: Wallet, label: "Request a payout from the app" },
-                { icon: Headphones, label: "Priority driver support" },
+                { icon: ShieldCheck, label: "R5 max commission" },
+                { icon: CreditCard, label: "See your pay before you accept" },
+                { icon: BadgeCheck, label: "No hidden deductions" },
+                { icon: Clock3, label: "Drive when you want" },
+                { icon: Wallet, label: "Payouts from the app" },
+                { icon: Headphones, label: "Priority support" },
               ].map((item) => (
                 <div
                   key={item.label}
@@ -739,11 +722,10 @@ function Drivers() {
               to="/contact"
               className="mt-8 inline-flex h-12 items-center gap-2 rounded-full bg-[#E1251B] px-6 text-[11px] font-black uppercase tracking-[0.14em] text-white transition hover:bg-[#0B0B0C]"
             >
-              Apply as a Founding Driver <ArrowUpRight className="h-4 w-4" />
+              Apply as a driver <ArrowUpRight className="h-4 w-4" />
             </Link>
             <p className="mt-5 max-w-xl text-[9px] font-semibold uppercase leading-relaxed tracking-[0.14em] text-[#8A837D]">
-              Founding Driver applications are open in Johannesburg. Approval depends on documents,
-              vehicle checks and the driver code. Payouts are requested from the driver app.
+              Apply in Johannesburg. Documents and vehicle checks apply. Payouts in the app.
             </p>
           </div>
 
