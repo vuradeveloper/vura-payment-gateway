@@ -1143,10 +1143,10 @@ function LandingPage() {
       <Hero />
       <Ticker />
       <PayLaterBand />
+      <Fares />
       <Everyone />
       <HowItWorks />
       <Pilots />
-      <Fares />
       <Safety />
       <Drivers />
       <FinalCta />
