@@ -131,6 +131,16 @@ function PrivacyPage() {
           <li>Withdraw consent where processing is based on consent.</li>
           <li>Lodge a complaint with the Information Regulator of South Africa.</li>
         </ul>
+        <p className="mt-4">
+          To delete your Vura account, use the{" "}
+          <Link
+            to="/delete-account"
+            className="font-semibold text-[#E1251B] underline underline-offset-2"
+          >
+            account deletion page
+          </Link>{" "}
+          or the Delete account option in the app.
+        </p>
       </LegalSection>
 
       <LegalSection index="8" title="Cookies and Tracking">

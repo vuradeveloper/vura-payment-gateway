@@ -138,9 +138,9 @@ export function LegalPage({
           <div className="flex items-center gap-3">
             <VuraLogo size={26} />
             <span className="text-[9px] font-bold uppercase leading-tight tracking-[0.18em] text-white/40">
-              Ride the night.
+              Rides that work
               <br />
-              Johannesburg.
+              for everyone.
             </span>
           </div>
           <div className="flex flex-wrap gap-x-5 gap-y-2 text-[10px] font-semibold uppercase tracking-[0.12em] text-white/45">
@@ -152,6 +152,9 @@ export function LegalPage({
             </Link>
             <Link to="/privacy" className="transition hover:text-[#E1251B]">
               Privacy
+            </Link>
+            <Link to="/delete-account" className="transition hover:text-[#E1251B]">
+              Delete account
             </Link>
             <Link to="/refunds" className="transition hover:text-[#E1251B]">
               Refunds

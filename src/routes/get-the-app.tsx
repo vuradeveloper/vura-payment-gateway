@@ -241,6 +241,9 @@ function Footer() {
           <Link to="/privacy" className="transition hover:text-[#E1251B]">
             Privacy
           </Link>
+          <Link to="/delete-account" className="transition hover:text-[#E1251B]">
+            Delete account
+          </Link>
           <Link to="/refunds" className="transition hover:text-[#E1251B]">
             Refunds
           </Link>
