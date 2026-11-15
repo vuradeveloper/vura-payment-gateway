@@ -29,8 +29,10 @@ export const Route = createFileRoute("/get-the-app")({
  * Store links live here so they can be updated in one place.
  *
  * The driver app is live on Google Play. The rider Android app is served as a
- * direct download while its Play listing is prepared. Paste the App Store URLs
- * and the rider Play URL here when they are available.
+ * direct download while its Play listing is prepared. The driver also has a
+ * direct APK fallback because a Play upload-key mismatch is holding the newest
+ * release back. Paste the App Store URLs and the rider Play URL here when they
+ * are available.
  */
 const RIDER_LINKS = {
   ios: null as string | null,
@@ -41,7 +43,7 @@ const RIDER_LINKS = {
 const DRIVER_LINKS = {
   ios: null as string | null,
   androidStore: "https://play.google.com/store/apps/details?id=app.vura.driver",
-  androidApk: null as string | null,
+  androidApk: "/downloads/vura-driver.apk",
 };
 
 function AppleLogo({ className }: { className?: string }) {
